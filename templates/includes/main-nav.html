@@ -17,10 +17,11 @@
                 Clothing
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="" class="dropdown-item">Kitchen</a>
-                <a href="" class="dropdown-item">Bathroom</a>
-                <a href="" class="dropdown-item">Skin Care</a>
-                <a href="" class="dropdown-item">Shop All</a>
+                <a href="{% url 'products' %}?category=kitchen" class="dropdown-item">Kitchen</a>
+                <a href="{% url 'products' %}?category=bathroom" class="dropdown-item">Bathroom</a>
+                <a href="{% url 'products' %}?category=skincare" class="dropdown-item">Skin Care</a>
+                <a href="{% url 'products' %}?category=onthego" class="dropdown-item">On-the-go</a>
+                <a href="{% url 'products' %}?category=kitchen,bathroom,skincare,onthego" class="dropdown-item">Shop All</a>
             </div>
         </li>
 
