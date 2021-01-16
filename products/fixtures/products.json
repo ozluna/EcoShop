@@ -1,0 +1,28 @@
+[
+  {
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+      "sku": "BAMBOOTOOTHBRUSH",
+      "name": "Bamboo Toothbrush",
+      "description": "A BambooToothbrush with zero packaging and medium bristles Every year over a billion plastic toothbrushes are thrown away worldwide, ending in landfill, in the sea or washed up on a beach. Using a bamboo toothbrush with a biodegradable handle is a small change, but together we can make a big difference. The Truthbrush came from a wish for a toothbrush that was beautiful and luxurious as well as biodegradable.",
+      "price": 5.99,
+      "category": 2,
+      "rating": 4.6,
+      "image": "tooth-brush.png"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+      "sku": "COCONUTDISHSCRUBBERS",
+      "name": "Biodegrable Coconut Kitchen Scrubbers",
+      "description": " eco-friendly biodegradable reusable kitchen scourers are perfect for scrubbing away hard grease, stains and any food residues. Reach all tricky corners of your plates and pots that rigid loofah scourers can’t get into.",
+      "price": 3.99,
+      "category": 1,
+      "rating": 4.6,
+      "image": "biodegrablecoconutkitchenscrubber.png"
+    }
+  }
+]
