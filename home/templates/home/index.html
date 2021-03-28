@@ -23,43 +23,54 @@
 </div> 
 <hr>
 <div class="container mt-5">
-    <div class="d-flex justify-content-between align-items-center mb-3"> <span>New Arrivals</span>  </div>
+    <div class="d-flex justify-content-between align-items-center mb-3"> <span class="mx-auto featured">New Arrivals</span>  </div>
     <div class="row">
-        <div class="col-md-4">
-            <div class="card">
+        <div class="slide-in-bottom module ">
+            <div class=" mx-auto col-xl-4 col-lg-6 col-md-6 col-sm-12 ">
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="d-flex flex-row align-items-center time"> <i class="fa fa-clock-o"></i> <small class="ml-1">3 Days</small> </div> <img src="https://i.imgur.com/suuFVrQ.png" width="20">
+                    <div class="d-flex flex-row align-items-center "> </div> 
                 </div>
-                <div class="text-center"> <img src="{% static 'media/tooth-paste.png' %}" width="250"> </div>
-                <div class="text-center">
-                    <h5>Coconut Toothpaste</h5> <span class="text-success">£8.99</span>
+                 <a href="#"><!-- this will be link to on the go collection filter-->
+                <div class="text-center float-md-start"> <img  src="{{ MEDIA_URL }}on-the-go.png" height="259" width="400" > </div>
+                 </a>   
+                 <div class="my-3 text-center">
+                      
+                    <h5 class="text-uppercase"> On the go</h5> <span class="from">From £2.99</span>
+                </div>
+             
+                
+               
+               
+            </div>
+        </div>
+        <div class="slide-in-bottom module ">
+            <div class="mx-auto col-xl-4 col-lg-6 col-md-6 col-sm-12 ">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex flex-row align-items-center "> </div> 
+                </div>
+                <a href="#"><!-- this will be link to skin care collection filter-->
+                <div class="text-center  float-md-start"> <img  src="{{ MEDIA_URL }}skincare.png" height="259" width="400"> </div>
+                </a>
+                <div class="text-center my-3 " >
+                    <h5 class=" text-uppercase" >Skin care</h5> <span class=" from">From £9.99</span>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
+        <div class=" " >
+            <div class=" col-xl-4 col-lg-6 col-md-6 col-sm-12  mx-auto kitchen">
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="d-flex flex-row align-items-center time"> <i class="fa fa-clock-o"></i> <small class="ml-1 text-primary">00:02:13</small> </div> <img src="https://i.imgur.com/suuFVrQ.png" width="20">
+                    <div class="d-flex flex-row align-items-center time"> </div> 
                 </div>
-                <div class="text-center"> <img src="https://i.imgur.com/bUWshC0.jpg" width="250"> </div>
-                <div class="text-center">
-                    <h5>Kruve Coffee Filters</h5> <span class="text-success">$80 value</span>
+                
+                <div class="text-center"><img src="{{ MEDIA_URL }}kitchen.png" height="259" width="400"></div>
+                <div class="text-center my-3">
+                    <h5 class="text-uppercase">Kitchen</h5> <span class="from">From £8.99</span>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="d-flex flex-row align-items-center time"> <i class="fa fa-clock-o"></i> <small class="ml-1">2 Days</small> </div> <img src="https://i.imgur.com/suuFVrQ.png" width="20">
-                </div>
-                <div class="text-center"> <img src="https://i.imgur.com/aTqSahW.jpg" width="250"> </div>
-                <div class="text-center">
-                    <h5>Apple watch 2.0</h5> <span class="text-success">$360 value</span>
-                </div>
-            </div>
-        </div>
+                
+            </div> 
+      </div>
     </div>
 </div>
         
-
+<script src="{{ STATIC_URL }}js/script.js"> </script>
 {% endblock %}
