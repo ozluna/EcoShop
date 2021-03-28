@@ -1,15 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&family=Open+Sans&display=swap');
 html {
     height:100%;
 }
 
 body{
-    background: url('/media/hero-image.png') no-repeat center center fixed;
-    background-size:cover;
-    height: calc(100vh- 164px);
-    color: #555;
+   
+    color: #734018;
     font-family: 'Lato';
+    
 }
 
-.header-container{
-    padding-top:164px;
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.logo-font {
+    text-transform: uppercase;
+}
+.hero-img {
+    margin-top: auto;
+    background: url(/media/hero-image.png) no-repeat right top;
+    background-size: cover;
+    height: 30.81rem;
+}
+.hero-img .container{
+    padding-top: 15rem;
+}
+/* Tagline*/
+.motto {     
+	width: 564px;
+	height: 84px;
+	
+	font-family: "Lato";
+	font-size: 40px;
+	line-height: 1;
+	text-align: center;
+}
+/* Button*/
+.shop-now-button{
+    padding: 0px 10px 0px 10px;
+    background: #e29578;
+    color: whitesmoke;
+    border-color: #e29578;
+    border-width: 1px;
+    border-style: solid;
+    font-family: "Lato";
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+    min-width: 260px;
+}
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-black:hover,
+.btn-black:active,
+.btn-black:focus {
+    background: #ffddd2;
+    border-color: #ffddd2;
+    color: #734018;
+}
+.main-logo-link {
+    width: fit-content;
+}
+.featured{
+    width: 455px;
+    height: 45px;    
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+
+.text-black {
+    color: #006D77!important;
+}
+
+.border-black {
+    border: 1px solid #006D77 !important;
+}
+.bg-black {
+    background:#006D77 !important;
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
+/*home page featured products*/
+.from{
+    color: #006D77 !important;
+    font-size: 18px;
+   
+}
+/*---------Animista*/
+.slide-in-bottom {
+	-webkit-animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+@media (max-width: 1620px) and (min-width: 768px) {
+    .kitchen{
+        display: none;
+    }
+}
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
 }
