@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@1,900&family=PT+Serif&display=swap');
 html {
     height:100%;
 }
@@ -34,9 +34,8 @@ body{
 /* Tagline*/
 .motto {     
 	width: 564px;
-	height: 84px;
-	
-	font-family: "Lato";
+	height: 84px;	
+	font-family: "PT+Serif";
 	font-size: 40px;
 	line-height: 1;
 	text-align: center;
@@ -73,7 +72,7 @@ body{
 .featured{
     width: 455px;
     height: 45px;    
-    font-family: "Lato";
+    font-family: "PT+Serif";
     font-weight: 300;
     font-size: 40px;
     line-height: 1;
@@ -103,10 +102,26 @@ body{
     z-index: -1;
 }
 /*home page featured products*/
-.from{
-    color: #006D77 !important;
-    font-size: 18px;
+.new-arrival{
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.75);
    
+}
+/* About us*/
+.about{
+background-color: #ffeee8;
+    
+}
+.about h1{
+    font-family:"PT+Serif";
+    font-weight: 900;
+}
+.about p {
+    color: #734018;
+    font-family: 'Lato';
+    font-size: 18px;
+    line-height: 2;
+    font-weight: 500;
+
 }
 /*---------Animista*/
 .slide-in-bottom {
