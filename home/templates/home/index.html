@@ -12,7 +12,7 @@
 <div class="hero-img">    
     <div class="container">
                 <h2 class="motto mx-auto">
-                    Your one stop Plastic Free, Zero Waste online shop                        
+                    Your One Stop Plastic Free, Zero Waste Online Shop                        
                 </h2>
                 <div class=" my-5 text-center">
                     <h4 >
@@ -24,6 +24,93 @@
 <hr>
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3"> <span class="mx-auto featured">New Arrivals</span>  </div>
+    <div class="row">
+        <div >
+            <div class=" mx-auto col-3 ">
+                
+                 <a href="#"><!-- this will be link to on the go product-->
+                <div class="text-center float-md-start"> <img class="new-arrival" src="{{ MEDIA_URL }}bamboo-cutlery.png" > </div>
+                 </a>   
+                 <div class="my-3 text-center">
+                      
+                    <h5 class="text-uppercase">Bamboo Cutlery Set</h5> <span>£10.99</span>
+                </div>
+             
+                
+               
+               
+            </div>
+        </div>
+        <div class="">
+            <div class="mx-auto col-3 ">
+                
+                <a href="#"><!-- this will be link to skin care collection filter-->
+                <div class="text-center  float-md-start"> <img class="new-arrival" src="{{ MEDIA_URL }}reusable-mask.png"> </div>
+                </a>
+                <div class="text-center my-3 " >
+                    <h5 class=" text-uppercase" > Reusable Cotton Mask </h5> <span class=" from">£5.99</span>
+                </div>
+            </div>
+        </div>
+        <div class=" " >
+            <div class=" col-3 mx-auto ">
+                               
+                <div class="text-center"><img class="new-arrival" src="{{ MEDIA_URL }}coco-butter.png"></div>
+                <div class="text-center my-3">
+                    <h5 class="text-uppercase">Organic Cocoa Butter</h5> <span class="from">£8.99</span>
+                </div>
+                
+            </div> 
+      </div>
+        <div class="">
+            <div class=" mx-auto col-3 ">
+                <a href="#"><!-- this will be link to on the go collection filter-->
+                <div class="text-center float-md-start"> <img class="new-arrival" src="{{ MEDIA_URL }}water-bottle.png" > </div>
+                 </a>   
+                 <div class="my-3 text-center">
+                      
+                    <p class="text-uppercase"> Stainless Steel Water Bottle </p> <span class="from">£2.99</span>
+                </div>
+             
+                
+               
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="container-fluid about">
+        <div class="row">
+            <div class="col-12 px-5 py-3 text-center">
+                <h1> About Us </h1>
+                <p class="px-5" >
+                    <br>  We are a UK zero waste shop with all of your everyday essentials for sustainable living. Simple, eco swaps anyone can start making today 
+
+                    to reduce your impact on our precious environment. Before we started EcoShop, we can remember how good it felt slowly eliminating one plastic
+
+                    product from our home after another. Our biggest drive to make these simple swaps was so we could protect the planet for our kids and for the 
+
+                    generations to come, so they could enjoy the great outdoors in the same way we did.<br>
+
+                    To say that shopping eco friendly products is expensive is a myth, and we want to help disprove this. Start small and simple with what you can afford.
+
+                    The cheapest eco swaps are in the kitchen, so change your cleaning products, dish brushes and clothes first. You will see these don’t cost much, and they will actually save you money in the long run since they are made better and last so much longer.<br>
+
+                    Eco Friendly shopping has never been easier for all of your favourite green products & zero waste products.<br>
+                    
+                    Ready to start making some simple swaps?<br>
+                    
+                    Welcome to EcoShop!
+                </p>
+            </div>
+           
+        </div>
+
+    </div>
+    <div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-3"> <span class="mx-auto featured">Popular Categories</span>  </div>
+    <!-- create model to check how many times a category has been clicked -->
     <div class="row">
         <div class="slide-in-bottom module ">
             <div class=" mx-auto col-xl-4 col-lg-6 col-md-6 col-sm-12 ">
@@ -71,6 +158,23 @@
       </div>
     </div>
 </div>
-        
+
+<section>
+    <div>
+        <h3>10% discount on your first order when you sign up for the news letter</h3>
+        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            </div>
+                            <button type="submit" class="btn btn-lg">Submit</button>
+        </form>
+    </div>
+</section>      
 <script src="{{ STATIC_URL }}js/script.js"> </script>
 {% endblock %}
