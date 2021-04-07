@@ -3,7 +3,7 @@
     "pk": 1,
     "model": "products.product",
     "fields": {
-      "sku": "bambootoothbrush",
+      "sku": "1",
       "name": "Bamboo Toothbrush",
       "description": "A BambooToothbrush with zero packaging and medium bristles Every year over a billion plastic toothbrushes are thrown away worldwide, ending in landfill, in the sea or washed up on a beach. Using a bamboo toothbrush with a biodegradable handle is a small change, but together we can make a big difference. The Truthbrush came from a wish for a toothbrush that was beautiful and luxurious as well as biodegradable.",
       "price": 5.99,
@@ -16,7 +16,7 @@
     "pk": 2,
     "model": "products.product",
     "fields": {
-      "sku": "coconutscrubber",
+      "sku": "2",
       "name": "Biodegrable Coconut Kitchen Scrubbers",
       "description": " eco-friendly biodegradable reusable kitchen scourers are perfect for scrubbing away hard grease, stains and any food residues. Reach all tricky corners of your plates and pots that rigid loofah scourers can’t get into.",
       "price": 3.99,
@@ -29,7 +29,7 @@
     "pk": 3,
     "model": "products.product",
     "fields": {
-      "sku": "COCONUTTOOTHPASTE",
+      "sku": "3",
       "name": "Biodegrable Coconut Tooth Paste",
       "description": "toothpaste has been specially developed to cleanse and remineralise teeth naturally. High in key minerals like calcium, potassium, magnesium and natural organic silica, this formula has been created using only the best quality ingredients, all of which are organic and food grade certified. In this collection there is something for everyone, bursting with minty flavours, whitening properties and even specialised kids toothpastes.",
       "price": 8.99,
@@ -42,7 +42,7 @@
     "pk": 4,
     "model": "products.product",
     "fields": {
-      "sku": "bamboocutlery",
+      "sku": "4",
       "name": "Bamboo Cutlery",
       "description": "Bamboo cutlery set is the sustainable, plastic-free solution to single-use cutlery when eating away from home, or for parties. Our wooden cutlery set is lightweight enough to be taken anywhere, but also durable to withstand continued use.",
       "price": 10.99,
@@ -55,7 +55,7 @@
     "pk": 5,
     "model": "products.product",
     "fields": {
-      "sku": "cocoabutter",
+      "sku": "5",
       "name": "Cocoa Butter",
       "description": "This cocoa butter is packed full of naturally-occurring Vitamin A. The rich fatty acids and antioxidants in cocoa butter help soothe dry skin and eczema, and reduce the appearance of wrinkles and age marks.",
       "price": 8.99,
@@ -69,7 +69,7 @@
     "pk": 6,
     "model": "products.product",
     "fields": {
-      "sku": "reusablemask",
+      "sku": "6",
       "name": "Reusable Mask",
       "description": "This is a simple pleated two-layer face covering with elastic ear loops – large enough to cover nose to chin on most adults.Reusable and washable on the cotton setting in your machine.",
       "price": 5.99,
@@ -82,7 +82,7 @@
     "pk": 7,
     "model": "products.product",
     "fields": {
-      "sku": "waterbottle",
+      "sku": "7",
       "name": "Water Bottle",
       "description": "A BambooToothbrush with zero packaging and medium bristles Every year over a billion plastic toothbrushes are thrown away worldwide, ending in landfill, in the sea or washed up on a beach. Using a bamboo toothbrush with a biodegradable handle is a small change, but together we can make a big difference. The Truthbrush came from a wish for a toothbrush that was beautiful and luxurious as well as biodegradable.",
       "price": 5.99,
@@ -95,7 +95,7 @@
     "pk": 8,
     "model": "products.product",
     "fields": {
-      "sku": "charcoalsoap",
+      "sku": "8",
       "name": "Charcoal Soap Bar",
       "description": "Delicately scented with midnight water fragrance oil, this natural and detoxifying soap bar is made with charcoal and sea clay which provides a pleasant aromatherapy experience for your daily relaxing shower or bath with a combination of Activated charcoal, sea clay and organic shea butter to keep your skin clean, refreshed and in tip top condition",
       "price": 4.50,
@@ -108,7 +108,7 @@
     "pk": 9,
     "model": "products.product",
     "fields": {
-      "sku": "coconutbowl",
+      "sku": "9",
       "name": "Coconut Bowl",
       "description": "The coconut shells are carefully selected, based on their size. Once selected, they can start their new life as coconut bowls. They get a flattened bottom to make sure they do not wobble over before being polished with a coconut oil to make them dishwasher safe.Upcycling is a zero-waste philosophy in which something valuable is created from unwanted items others would have regarded as trash. This practice reduces waste and emissions, as it keeps a lot of usable material outside the waste stream. Luckily, there are a lot of opportunities to get upcycled products, or you can upcycle yourself.",
       "price": 3.95,
@@ -121,13 +121,26 @@
     "pk": 10,
     "model": "products.product",
     "fields": {
-      "sku": "lavandersoap",
+      "sku": "10",
       "name": "Lavander Soap",
       "description": "Lavender is the eternal classic. The latin name for lavender actually means ‘to wash’. By adding finely cut Lavender flowers to the blend this bar have introduced a gentle exfoliant that works in tandem with the essential oil to give you a relaxing, and thoroughly cleansing, experience.Each bar is handmade with Coconut Oil, Shea Butter, Olive Oil, Lavender essential oil, Lavender flowers, Water.",
       "price": 3.50,
       "category": 2,
       "rating": 4.1,
       "image": "lavander-soap.png"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "products.product",
+    "fields": {
+      "sku": "11",
+      "name": "Shampoo Bar",
+      "description": "Shampoo bars are perfect for reducing waste in your hair care regime, not only better for your hair but also the environment. Say goodbye to plastic bottles and hello to a wonderful shampoo bar to suit your hair. This shampoo bar soap has been made with 100% natural ingredients",
+      "price": 4.50,
+      "category": 2,
+      "rating": 4.5,
+      "image": "solid-shampoo-purple.png"
     }
   }
 
