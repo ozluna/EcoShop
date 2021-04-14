@@ -6,7 +6,7 @@ from products.models import Product
 
 def index(request):
 
-    products_newarrival = Product.objects.all().order_by('pk')[:4]
+    products_newarrival = Product.objects.all().order_by('pk')[::-1][:4]
 
     context = {
         'product_newarrival': products_newarrival
