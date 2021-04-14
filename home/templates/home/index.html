@@ -24,59 +24,25 @@
 <hr>
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3"> <span class="mx-auto featured">New Arrivals</span>  </div>
-    <div class="row">
-        <div >
-            <div class=" mx-auto col-3 ">
+    <div class="row">        
+            {% for product in product_newarrival %}
+                <div class=" mx-auto col-3 ">
+                    
+                    <a href="#"><!-- this will be link to on the go product-->
+                    <div class="text-center float-md-start"> <img class="new-arrival" src=" {{product.image.url}}" > </div>
+                    </a>   
+                    <div class="my-3 text-center">
+                        
+                        <h5 class="text-uppercase">{{product.name}}</h5> <span>{{product.price}}</span>
+                    </div>
                 
-                 <a href="#"><!-- this will be link to on the go product-->
-                <div class="text-center float-md-start"> <img class="new-arrival" src="{{ MEDIA_URL }}bamboo-cutlery.png" > </div>
-                 </a>   
-                 <div class="my-3 text-center">
-                      
-                    <h5 class="text-uppercase">Bamboo Cutlery Set</h5> <span>£10.99</span>
-                </div>
-             
+                    
                 
-               
-               
-            </div>
-        </div>
-        <div class="">
-            <div class="mx-auto col-3 ">
                 
-                <a href="#"><!-- this will be link to skin care collection filter-->
-                <div class="text-center  float-md-start"> <img class="new-arrival" src="{{ MEDIA_URL }}reusable-mask.png"> </div>
-                </a>
-                <div class="text-center my-3 " >
-                    <h5 class=" text-uppercase" > Reusable Cotton Mask </h5> <span class=" from">£5.99</span>
-                </div>
-            </div>
-        </div>
-        <div class=" " >
-            <div class=" col-3 mx-auto ">
-                               
-                <div class="text-center"><img class="new-arrival" src="{{ MEDIA_URL }}coco-butter.png"></div>
-                <div class="text-center my-3">
-                    <h5 class="text-uppercase">Organic Cocoa Butter</h5> <span class="from">£8.99</span>
-                </div>
-                
-            </div> 
-      </div>
-        <div class="">
-            <div class=" mx-auto col-3 ">
-                <a href="#"><!-- this will be link to on the go collection filter-->
-                <div class="text-center float-md-start"> <img class="new-arrival" src="{{ MEDIA_URL }}water-bottle.png" > </div>
-                 </a>   
-                 <div class="my-3 text-center">
-                      
-                    <p class="text-uppercase"> Stainless Steel Water Bottle </p> <span class="from">£2.99</span>
-                </div>
-             
-                
-               
-               
-            </div>
-        </div>
+                </div>            
+              
+            {% endfor %}        
+       
     </div>
 </div>
 
