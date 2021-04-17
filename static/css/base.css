@@ -9,7 +9,18 @@ body{
     font-family: 'Poppins';
     
 }
+/*dropdown items*/
 
+.dropdown-item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-item:hover {background-color: #ddd;}
+  .dropdown:hover .dropdown-item {display: block;}
+ 
 /* from Bulma */
 .icon {
     align-items: center;
@@ -121,6 +132,13 @@ background-color: #ffeee8;
     line-height: 2;
     font-weight: 500;
 
+}
+/* Product page */
+.breadcrumb{
+    background-color: transparent !important;
+}
+.breadcrumb-item a{
+    color:inherit;
 }
 /*---------Animista*/
 .slide-in-bottom {
