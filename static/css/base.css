@@ -140,6 +140,30 @@ background-color: #ffeee8;
 .breadcrumb-item a{
     color:inherit;
 }
+/* star rating */
+.stars-outer {
+    display: inline-block;
+    position: relative;
+    font-family: "FontAwesome 5 Free";
+  }
+  
+  .stars-outer::before {
+    content: "\f006 \f006 \f006 \f006 \f006";
+  }
+  
+  .stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+  }
+  
+  .stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: #83C5BE;
+  }
 /*---------Animista*/
 .slide-in-bottom {
 	-webkit-animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
