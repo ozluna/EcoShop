@@ -1,4 +1,4 @@
-![(static/images/MeetEcoresponsive.PNG)](static/images/MeetEcoresponsive.PNG)
+
 
 # Table of Contents
 1. [Example](#example)
@@ -66,7 +66,7 @@ As a owner I would like
 ## **Design**
 ---
 ### **Colour**
-![(media/EcoShoppalette.png)](media/EcoShoppalette.png)
+![(readmedoc/EcoShoppalette.png)](readmedoc/EcoShoppalette.png)
 ### **Strategy**
 
 I wanted to answer users common questions such as "Is this what I expected to see?", "Does it offer what I want?",
