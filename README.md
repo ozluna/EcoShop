@@ -66,7 +66,10 @@ As a owner I would like
 ## **Design**
 ---
 ### **Colour**
-![(readmedoc/EcoShoppalette.png)](readmedoc/EcoShoppalette.png)
+![(readme-doc/EcoShoppalette.png)](readme-doc/EcoShoppalette.png)
+
+* I have created the color palette using the hero image on the website with [colors.co](https://coolors.co/006d77-83c5be-edf6f9-ffddd2-e29578) palette creator for holistic view 
+*  
 ### **Strategy**
 
 I wanted to answer users common questions such as "Is this what I expected to see?", "Does it offer what I want?",
