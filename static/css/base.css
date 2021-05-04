@@ -9,6 +9,10 @@ body{
     font-family: 'Poppins';
     
 }
+.header-container{
+  padding-bottom: 3em;
+}
+
 /*dropdown items*/
 
 .dropdown-item {
@@ -30,8 +34,9 @@ body{
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
+.logo img {
+    width: 200px;
+    height: 100px;
 }
 .hero-img {
     margin-top: auto;
