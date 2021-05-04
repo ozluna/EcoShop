@@ -28,16 +28,23 @@
     {% endblock %}
 
     {% block extra_js %}
+    <link rel="stylesheet" href="{% static 'js/script.js' %}">
     {% endblock %}
 
     <title>EcoShop {% block extra_title%}{% endblock %}</title>
   </head>
   <body>
+    
      <header class="container-fluid fixed-top">
+        <div id="delivery-banner" class="row text-center">
+            <div class="col bg-black text-white">
+                <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
+            </div>            
+        </div>
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0">EcoShop</h2>
+                    <h2 class="logo my-0"> <img src="{{ MEDIA_URL }}EcoShopLogo.png" alt="">   </h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -60,28 +67,30 @@
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user-circle fa-lg text-dark"></i></div>
-                                <p class="my-0 text-dark">Login</p>
+                                <p class="my-0 text-dark"></p>
                             </div>
                         </a>
-                        <div class="border-0" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="">Product Management</a>
+                                    <a href="" class="dropdown-item">Product Management</a>
                                 {% endif %}
-                                <a href="">My Profile</a>
-                                <a href="{% url 'account_logout' %}">Logout</a>
+                                <a href="" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
-                                <a href="{% url 'account_login' %}"></a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                             {% endif %}
                         </div>
                     </li>
-                    <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                    <!-- I added a style to align the shopping cart with account icon -->
+                    <li class="list-inline-item" style="display: inline-flex;">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_cart' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-cart fa-md text-success"></i></div>
                                 <p class="my-0 text-success">
                                     {% if grand_total %}
-                                        ${{ grand_total|floatformat:2 }}
+                                        £{{ grand_total|floatformat:2 }}
                                     {% else %}
                                         £0.00
                                     {% endif %}
@@ -102,11 +111,7 @@
                 
             </nav>
         </div>
-        <div id="delivery-banner" class="row text-center">
-            <div class="col bg-black text-white">
-                <h4 class="logo-font my-1">Free delivery on orders over £{{ free_shipping_threshold }}!</h4>                
-            </div>            
-        </div>
+        
     </header>
 
     {% if messages %}
