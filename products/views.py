@@ -31,24 +31,24 @@ def all_products(request):
             products = products.order_by(sortkey)
 
         if 'category' in request.GET:
-            categories = request.GET('catergory').split(',')
-            products = products.filter(category_name_in=categories)
-            categories = Category.object.filter(name_in=categories)
+            categories = request.GET['category'].split(',')
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
 
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
                 messages.error(request, "Please type product name to search")
                 return redirect(reverse('products'))
-            quieries = Q(name_icontains=query) | Q(description_icontains=query)
-            products = products.filter(quieries)
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
 
     context = {
         'products': products,
         'search_term': query,
-        'current categories': categories,
+        'current_categories': categories,
         'current_sorting': current_sorting,
     }
     return render(request, 'products/products.html', context)
@@ -61,3 +61,5 @@ def product_detail(request, product_id):
         'product': product,
     }
     return render(request, 'products/product_detail.html', context)
+
+
