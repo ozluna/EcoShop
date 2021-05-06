@@ -5,36 +5,32 @@
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="clothing-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Clothing
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?categories=kitchen" id="kitchen-link" aria-expanded="false">
+                Kitchen
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?category=kitchen" class="dropdown-item">Kitchen</a>
-                <a href="{% url 'products' %}?category=bathroom" class="dropdown-item">Bathroom</a>
-                <a href="{% url 'products' %}?category=skincare" class="dropdown-item">Skin Care</a>
-                <a href="{% url 'products' %}?category=onthego" class="dropdown-item">On-the-go</a>
-                <a href="{% url 'products' %}?category=kitchen,bathroom,skincare,onthego" class="dropdown-item">Shop All</a>
-            </div>
+            
         </li>
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="homeware-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Homeware
+                Categories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="" class="dropdown-item">Kitchen</a>
-                <a href="" class="dropdown-item">Bathroom</a>
-                <a href="" class="dropdown-item">On-the-go</a>
-                <a href="" class="dropdown-item">Skin-care</a>
-                <a href="" class="dropdown-item">Shop All</a>
+                
+                <a href="{% url 'products' %}?category=Kitchen" class="dropdown-item">Kitchen</a>
+                <a href="{% url 'products' %}?category=Bathroom" class="dropdown-item">Bathroom</a>
+                <a href="{% url 'products' %}?category=Skin Care" class="dropdown-item">Skin Care</a>
+                <a href="{% url 'products' %}?category=On-the-go" class="dropdown-item">On-the-go</a>
+                <a href="{% url 'products' %}?category=Kitchen,Bathroom,Skin Care,On-the-go" class="dropdown-item">Shop All</a>
+           
             </div>
         </li>
         
