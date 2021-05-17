@@ -8,7 +8,6 @@ def index(request):
 
     products_newarrival = Product.objects.all().order_by('pk')[::-1][:4]
 
-
     context = {
         'product_newarrival': products_newarrival
     }
