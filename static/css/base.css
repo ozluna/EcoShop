@@ -141,6 +141,7 @@ background-color: #ffeee8;
 /* Product page */
 .breadcrumb{
     background-color: transparent !important;
+    margin-top:6rem;
 }
 .breadcrumb-item a{
     color:inherit;
@@ -226,4 +227,10 @@ background-color: #ffeee8;
     .header-container {
         padding-top: 164px;
     }
+    
+}
+@media(max-width:992px){
+  .breadcrumb{
+    margin-top:9rem;
+  }
 }
