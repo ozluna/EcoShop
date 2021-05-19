@@ -170,6 +170,23 @@ background-color: #ffeee8;
     content: "\f005 \f005 \f005 \f005 \f005";
     color: #83C5BE;
   }
+
+
+/*------toaster position */
+.message-container {
+  z-index: 999999999;
+  position:fixed;
+  top: 72px;
+  right:15px;
+
+}
+.custom-toast {
+  overflow:visible;
+}
+
+.toast-capper {
+  height: 2px;
+}
 /*---------Animista*/
 .slide-in-bottom {
 	-webkit-animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
