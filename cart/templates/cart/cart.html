@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% carttools %}
+{% load carttools %}
 
 {%block page_header %}
     <div class="container header-container">
@@ -47,7 +47,7 @@
                                 <p class="my-0">{{ item.quantity }}</p>
                             </td>
                             <td class="py-3 px-3">
-                                <p class="my-0">£{{ item.product.price | subtotal: item.quantity}}</p>
+                                <p class="my-0">£{{ item.product.price | subtotal:item.quantity}}</p>
                             </td>
                           </tr>
                         {%endfor%}
@@ -102,7 +102,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
+{% include 'products/include/quantity_input_script.html' %}
 
 <script type="text/javascript">
     // Update quantity on click
