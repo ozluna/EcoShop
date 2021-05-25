@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'checkout',
+
+    'crispy-forms',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +64,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'EcoShop.urls'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -81,6 +85,10 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'cart.contexts.cart_contents'
             ],
+            'bultins':[
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]
