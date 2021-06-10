@@ -18,9 +18,9 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">My Profile</h2>
-                <hr>
+                
+                <h1 class="mb-4">My Profile</h1>
+              
             </div>
         </div>
         <div class="row">
@@ -42,7 +42,7 @@
         {{ profile }}
 {% endblock %}
 
-% block postloadjs %}
+{% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript" src="{% static 'profile/js/countryfield.js' %}"></script>
 {% endblock %}
