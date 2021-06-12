@@ -192,6 +192,15 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-7 text-right">
+                {% if form_profile %}
+                <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
+					<span class="icon mr-2">
+						<i class="fas fa-angle-left"></i>
+					</span>
+					<span class="text-uppercase">Profile page</span>
+				</a>
+                {%else%}
+                
                 <!--create popular categories in model add thepictures and links here to as well as main page-->
                 <a href="{% url 'products' %}?category=popular" class="btn btn-black rounded-0 my-2">
 					<span class="icon mr-2">
@@ -199,6 +208,7 @@
 					</span>
 					<span class="text-uppercase">Check out our popular categories</span>
 				</a>
+                {%endif%}
             </div>
         </div>
     </div>    
