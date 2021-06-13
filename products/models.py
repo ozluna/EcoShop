@@ -27,6 +27,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True,
                                  blank=True)
+
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
 
@@ -34,9 +35,17 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
-class reviewRating(models.Model):
+class ReviewRating(models.Model):
     # review and rating model
-    # I want to create a list of ratings so I 
+    
+    # I want to create a list of ratings so I can calculate the ratings in the views.py show them as stars
     rating = []
+    
+    review_headline = models.CharField(max_length=254, null=True, blank=False)
+    review_text = models.TextField(null=True, max_length=1000, blank=False)
+    review_image = models.ImageField(null=True, blank=True)
+    
+    def __str__(self):
+        return self.rating
 
     
