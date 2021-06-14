@@ -87,10 +87,10 @@
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">
                                                 <a href="{% url 'products' %}?category={{product.category.name}}" class="text-muted">
-                                                    <i class="fas fa-tag mr-1">{{ product.category.friendly_name }}</i>
                                                 </a>
                                             </p>
                                             {% endif %}
+                                            
                                             {% if product.rating %}
                                                 <div class="stars-outer">
                                                     <div class="stars-inner"></div>
@@ -98,6 +98,12 @@
                                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                             {% else %}
                                                 <small class="text-muted">No Rating</small>
+                                            {% endif %}
+                                            {% if request.user.is_superuser %}
+                                                <small class="ml-3">
+                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                                </small>
                                             {% endif %}
                                         </div>
                                     </div>
