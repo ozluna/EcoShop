@@ -27,9 +27,9 @@ class OrderForm(forms.ModelForm):
             'county': 'County, State or Locality',
         }
 
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['default_phone_number'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'countrty':
+            if field != 'default_country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
                 else:
