@@ -21,7 +21,7 @@ var card = elements.create('card',{style:style});
 card.mount('#card-element');
 
 // error handles on the card element
-    card.addEventListener('change', function(event){
+card.addEventListener('change', function(event){
     var errorDiv = document.getElementById('card-errors');
     if (event.error){
         var html = `<span class ="icon" role="alert">
