@@ -60,3 +60,4 @@ def remove_cart(request, item_id):
     except Exception as e:
         messages.error(request,f'Error removing the item {e}')
         return HttpResponse(status=500)
+
