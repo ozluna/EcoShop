@@ -18,11 +18,16 @@
                 {% for item in cart_items %}
                     <div class="row">
                          <!--check if the item has image this didn't work-->
-                        {% if item.product.image.url %}
+                        {% if item.product.image %}
                             <div class="col-3 my-1">
                             
                                 <img class="w-100" src="{{ item.product.image.url }}">
                             </div>
+                        {%else%}
+                        <div class="col-3 my-1">
+                            
+                            <img class="w-100" src="{{ MEDIA_URL}}noimage.png" alt="{{item.product.name}}">
+                        </div>
                         {%endif%}
                         <div class="col-9">
                             <p class="my-0"><strong>{{ item.product.name }}</strong></p>
