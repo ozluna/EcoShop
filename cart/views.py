@@ -15,7 +15,10 @@ def add_cart(request, item_id):
     # Add specified item to the cart
 
     product = get_object_or_404(Product,pk=item_id)
-    quantity = int(request.POST.get('quantity'))
+    if request.POST.get("quantity"):
+        quantity = int(request.POST.get('quantity'))
+    else:
+        quantity = 1
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
 

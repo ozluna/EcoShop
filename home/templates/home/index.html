@@ -50,10 +50,10 @@
                     
                     {% if product.image %}
                                 <a href="{%url 'product_detail' product.id %}">
-                                    <div class="text-center float-md-start">   <img class="new-arrival" src="{{ product.image.url }}" alt="{{ product.name }}"></div>
+                                    <div class="text-center float-md-start">   <img class="new-arrival"  src="{{ product.image.url }}" alt="{{ product.name }}"></div>
                                 </a>
                                 {% else %}
-                                <a href="{%url 'product_detail' product.id %} ">
+                                <a  href="{%url 'product_detail' product.id %} ">
                                     <div class="text-center float-md-start"><img class="new-arrival" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}"></div>
                                 </a>
                                 {% endif %}

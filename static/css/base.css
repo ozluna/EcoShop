@@ -120,31 +120,55 @@ body{
 /*home page featured products*/
 .new-arrival{
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.75);
+    max-width: 207px;
    
 }
 /* About us*/
 .about{
-background-color: #ffeee8;
+  background-color: #ffeee8;
     
 }
 .about h1{
-    font-family:"PT+Serif";
-    font-weight: 900;
+  font-family:"PT+Serif";
+  font-weight: 900;
 }
 .about p {
-    color: #734018;
-    font-size: 18px;
-    line-height: 2;
-    font-weight: 500;
+  color: #734018;
+  font-size: 18px;
+  line-height: 2;
+  font-weight: 500;
 
 }
-/* Product page */
+/*Products page*/
+/*card design*/
+.btn-add{
+  background: #e29578;
+  color: whitesmoke;
+  border-color: #e29578;
+}
+.btn-add:active,
+.btn-add:hover{
+  background: #e29578;
+  border-color: #e29578;
+  color: #734018; 
+
+}
+.card{
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.75);
+  
+}
+.card-title{
+  height: 4rem;
+  overflow: hidden;
+}
+
+/* Product_detail page */
 .breadcrumb{
-    background-color: transparent !important;
-    margin-top:6rem;
+  background-color: transparent !important;
+  margin-top:6rem;
 }
 .breadcrumb-item a{
-    color:inherit;
+  color:inherit;
 }
 /* star rating */
 .stars-outer {
