@@ -243,7 +243,7 @@ You should then be able to launch your app using the following command in your t
 * In the Heroku dashboard, click "Deploy".
 * Your application should now be deployed.
 ## **Credits**
- 
+ scroll top feature is from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 Canva was used to create the logo [Canva](https://www.canva.com/)  
 Event_categories leaf icon is from Fontawsome [Fontawsome](https://fontawesome.com/)   
 For responsiveness I used [Boostrap](https://getbootstrap.com/)  

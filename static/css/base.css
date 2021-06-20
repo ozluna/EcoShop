@@ -140,6 +140,27 @@ body{
 
 }
 /*Products page*/
+#myBtn{
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 99; 
+  border: none;
+  outline: none;
+  background-color:#e29578;
+  color: whitesmoke;
+  cursor: pointer;
+  padding:0 0.5rem;
+  border-radius: 4px;
+  }
+#myBtn:hover{
+  background-color: #ffddd2;
+  color: #734018;
+}
+#myBtn i {
+  font-size: 2rem;
+}
 /*card design*/
 .btn-add{
   background: #e29578;
