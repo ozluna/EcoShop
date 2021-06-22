@@ -1,4 +1,6 @@
 from django.db import models
+from profiles.models import UserProfile
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -25,27 +27,24 @@ class Product(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True,
+    rating  = models.DecimalField(max_digits=6, decimal_places=2, null=True,
                                  blank=True)
-
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
-
-
     def __str__(self):
         return self.name
 
-class ReviewRating(models.Model):
-    # review and rating model
-    
-    # I want to create a list of ratings so I can calculate the ratings in the views.py show them as stars
-    rating = []
-    
+class ProductReview(models.Model):
+    # review  model
+    product = models.ForeignKey(Product, null=True, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE )
     review_headline = models.CharField(max_length=254, null=True, blank=False)
     review_text = models.TextField(null=True, max_length=1000, blank=False)
-    review_image = models.ImageField(null=True, blank=True)
-    
-    def __str__(self):
-        return self.rating
+    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True,
+                                 blank=True)
 
-    
+    def __str__(self):
+        return self.user.user.username
+
+
+

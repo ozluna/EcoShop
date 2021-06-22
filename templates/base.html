@@ -39,22 +39,22 @@
     
      <header class="container-fluid fixed-top">
         <div id="delivery-banner" class="row text-center">
-            <div class="col bg-black text-white">
+            <div class="col text-white">
                 <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
             </div>            
         </div>
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo my-0"> <img src="{{ MEDIA_URL }}EcoShopLogo.png" alt="">   </h2>
+                    <h2 class="logo my-0"> <img src="{{ MEDIA_URL }}EcoShopLogo.png" alt="company logo">   </h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{%url 'products' %}">
-                    <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
+                    <div class="input-group w-50">
+                        <input class="form-control border" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <button class="form-control btn border " type="submit">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -66,7 +66,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="color nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user-circle fa-lg text-dark"></i></div>
                                 <p class="my-0 text-dark"></p>
@@ -87,7 +87,7 @@
                     </li>
                     <!-- I added a style to align the shopping cart with account icon -->
                     <li class="list-inline-item" style="display: inline-flex;">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_cart' %}">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text{% endif %} nav-link" href="{% url 'view_cart' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-shopping-cart fa-md text-success"></i>
                                     <!--this is not working atm-->
@@ -145,6 +145,117 @@
     {% block content %}
     {% endblock %}
 
+    
+<!-- Footer -->
+    <footer class="text-center text-lg-start footer">
+        <!-- Section: Social media -->
+        <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+        >
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+            <span>Get connected with us on social networks:</span>
+        </div>
+        <!-- Left -->
+    
+        <!-- Right -->
+        <div>
+            <a href="" class="me-4 text-reset">
+            <i class="color fab fa-facebook-f"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+            <i class="color fab fa-twitter"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+            <i class="color fab fa-google"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+            <i class="color fab fa-instagram"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+            <i class="color fab fa-linkedin"></i>
+            </a>
+            <a href="" class="me-4 text-reset">
+            <i class="color fab fa-github"></i>
+            </a>
+        </div>
+        <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+    
+        <!-- Section: Links  -->
+        <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <!-- Content -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                    <img src="{{ MEDIA_URL }}EcoShopLogo.png" alt="company logo"> 
+                
+                </h6>
+                
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                    <a href="{% url 'products' %}" class="text-reset">All-Products</a>
+                </h6>                
+                <h6 class="text-uppercase fw-bold mb-4">
+                    <a href="{% url 'account_signup' %}" class="text-reset">Register</a>
+                </h6>
+                <h6 class="text-uppercase fw-bold mb-4">
+                    <a href="{% url 'account_login' %}" class="text-reset">Login</a>
+                </h6>
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                    Send Us Message
+                </h6>
+               <form action="" >
+                   <input class="form-control border" type="fullname" placeholder="fullname">
+                   <input class="form-control border" type="email" name="" id="" placeholder="email">
+                   <input class="form-control border" type="text-field" placeholder="Message">
+               </form>
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                Contact
+                </h6>
+                <p><i class="fas fa-home me-3"></i> Cambridge, UK</p>
+                <p>
+                <i class="fas fa-envelope me-3"></i>
+                    ecoshopinformation@gmail.com
+                </p>
+                <p><i class="fas fa-phone me-3"></i> +44 234 567 88</p>
+               
+            </div>
+            <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+        </section>
+        <!-- Section: Links  -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color:#FFDDD2;">
+        © 2021 Copyright:
+        <p class="text-reset fw-bold" > Ozge Onel </p>
+        </div>
+        <!-- Copyright -->
+    </footer>
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
