@@ -132,9 +132,8 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
-def add_review(request, product_id):
-    
-        product= get_object_or_404(Product, pk=product_id)
+def add_review(request, product_id):       
+ 
         if request.method == 'POST':
             form = ProductReviewForm(request.POST, instance=product)
             if form.is_valid():
@@ -150,6 +149,8 @@ def add_review(request, product_id):
                 form = ProductReviewForm(instance=product)
                 messages.error('Failed to add please check your form')
                 return render(request,'products/product_detail', context)
+
+
 
      
 
