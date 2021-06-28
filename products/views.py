@@ -59,11 +59,42 @@ def all_products(request):
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-
+     
+    
+    if request.method == 'POST':
+       
+        review_form_data ={
+        'review_headline':request.POST['review_headline'],
+        'review_text':request.POST['review_text'],
+        'rating':request.POST['rating'],        
+        }
+        form = ProductReviewForm(review_form_data)
+        if form.is_valid():
+            data = form.save(commit=False) # review not saved yet
+            # collecting the user input
+            data.user = request.user                  
+            data.product = product
+            data.save()         
+            data.product_id = Product.objects.get(id=product_id)
+            messages.success(request, 'Your review is added')
+            return redirect(reverse('product_detail', args=[product.id]))
+           
+        else:
+            form = ProductReviewForm(instance=product)
+            messages.error(request, 'Failed to add please check your form')            
+            return redirect(reverse('product_detail', args=[product.id]))
+    else:
+        form = ProductReviewForm()      
+   
+    product_review = ProductReview.objects.filter(product_id=product_id)
+    template = 'products/product_detail.html'    
     context = {
         'product': product,
+        'form':form,
+        'product_review':product_review,
+        
     }
-    return render(request, 'products/product_detail.html', context)
+    return render(request,template , context)
 
 @login_required
 def add_product(request):
@@ -132,24 +163,8 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
-def add_review(request, product_id):       
- 
-        if request.method == 'POST':
-            form = ProductReviewForm(request.POST, instance=product)
-            if form.is_valid():
-                data = form.save(commit=False) # review not saved yet
-                data.review_headline = request.POST['review_headline']
-                data.review_text = request.POST['review_text']
-                data.rating = request.POST['rating']
-                form.save()
-                context={'form':form} 
-                messages.success('Your review is added')
-                return render(request,'products/product_detail', context)
-            else:
-                form = ProductReviewForm(instance=product)
-                messages.error('Failed to add please check your form')
-                return render(request,'products/product_detail', context)
 
+       
 
 
      

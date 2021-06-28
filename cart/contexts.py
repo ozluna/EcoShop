@@ -1,7 +1,14 @@
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib import messages
+
+
 from products.models import Product
+from .models import Coupon
+
+
 
 
 def cart_contents(request):
@@ -27,6 +34,8 @@ def cart_contents(request):
     else:
         delivery = 0
         free_delivery_delta = 0
+    
+
 
     grand_total = delivery + total
 
@@ -41,3 +50,14 @@ def cart_contents(request):
     }
 
     return context
+
+def add_coupon(request, code):
+    
+    try:
+        coupon = Coupon.objects.get(code=code)
+    except ObjectDoesNotExist:
+        #if order does not exist
+        messages.error(request, 'The code you enter is not valid')
+        return redirect(reverse(view_cart))
+
+    return redirect(reverse(view_cart))

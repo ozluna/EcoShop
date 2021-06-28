@@ -103,48 +103,57 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!--Review section-->
-                                
-                            <div class="row">
-                                    {{user.user.username}}
-                                    <form class="form" action="{% url 'add_review' product.id %}" method="POST">
-                                        {% csrf_token %}
-                                        {{form|crispy}}
-
-                                    </form>
-
-                                </div>
-                                {% for review in ProductReviews%}
-                                
-                                
-
-                                <div class="row">
-                                    <div class="col-12">
-
-                                    </div>
-                                </div>
-                                {%endfor%}  
-
-                                <div class="col{% if s %}-12 mt-2{% endif %}">
-                                    <a href="{% url 'products' %}" class="btn btn-outline-black mt-5">
-                                        <span class="icon">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </span>
-                                        <span class="text-uppercase">Keep Shopping</span>
-                                    </a>
-                                    <input type="submit" class="btn btn-black text-uppercase mt-5" value="Add to Cart">
-                                </div>
-                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                
+                                </div>    
+                            </div>  
+                            <div class="col{% if s %}-12 mt-2{% endif %}">
+                                <a href="{% url 'products' %}" class="btn btn-outline-black mt-5">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Keep Shopping</span>
+                                </a>
+                                <input type="submit" class="btn btn-black text-uppercase mt-5" value="Add to Cart">
                             </div>
+                            <input type="hidden" name="redirect_url" value="{{request.path}}">                      
+                          
                         </form>
+                        
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+         <!--Review section-->
+        {% if user.is_authenticated %} 
+            <div class="row">                
+                
+                <form class="form" action="{% url 'product_detail' product.id %}" method="POST">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <button class=" float-right btn-add" action="submit" value="Submit"> Submit</button>
+                </form>
+
+        {%endif%}
+                {%if product_review %}
+                    {% for review in product_review %}                 
+                        <div class="col-6">
+                            <div class="d-block"> {{review.review_headline}}   </div>
+                            <div class="d-block"> {{review.review_text }}</div>
+                            <div class="d-block"> {{review.user }}</div>
+                            <div class="d-block"> {{review.review_date }}</div>                           
+
+                        </div>
+                        <hr>                    
+                    {%endfor%}
+                {%endif%}  
+               
+            </div>
+       
+
+       
+        
     
+    </div>  
     
 {% endblock %}
 
