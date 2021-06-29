@@ -1,14 +1,21 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
+from django.core.exceptions import ObjectDoesNotExist
+from django.utils import timezone
 
 from products.models import Product
+from .models import Coupon
+from .forms import CouponForm
 
 # Create your views here.
 
 
 def view_cart(request):
     # A view renders the cart contents page
-    return render(request, 'cart/cart.html')
+    coupon_form = CouponForm(request.POST)    
+    context ={
+        'coupon_form': coupon_form,}
+    return render(request, 'cart/cart.html', context)
 
 
 def add_cart(request, item_id):
@@ -64,3 +71,29 @@ def remove_cart(request, item_id):
         messages.error(request,f'Error removing the item {e}')
         return HttpResponse(status=500)
 
+def add_coupon(request):    
+    
+    if request.method == 'POST':
+        now =timezone.now()
+        # getting the user input
+        coupon_form_data = {'code':request.POST['code']}
+        coupon_form = CouponForm(coupon_form_data) 
+        print(coupon_form)
+        print('this works')     
+        # check if the code is valid
+        if coupon_form.is_valid:
+            code = coupon_form.cleaned_data['code']  
+            try:                  
+                coupon = Coupon.objects.get(code=code)
+                request.session['coupon_id'] = coupon.id
+                print('coupon')
+                print(coupon)
+                print('am i working')
+                messages.info(request, 'Your code is applied to your cart')
+            except ObjectDoesNotExist:
+                print('you enter wrong code mate')
+                messages.error(request,'Code you enter is not valid')
+                return redirect(reverse(view_cart))
+        
+           
+    return redirect(reverse(view_cart))

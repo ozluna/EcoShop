@@ -62,7 +62,7 @@ def product_detail(request, product_id):
     review_count=None
     
     if request.method == 'POST':
-       
+       # once the form is posted collecting the user input
         review_form_data ={
         'review_headline':request.POST['review_headline'],
         'review_text':request.POST['review_text'],
@@ -70,13 +70,11 @@ def product_detail(request, product_id):
         }
         form = ProductReviewForm(review_form_data)
         if form.is_valid():
-            data = form.save(commit=False) # review not saved yet
-            # collecting the user input
+            data = form.save(commit=False) # review not saved yet            
             data.user = request.user                  
             data.product = product
             data.save()         
             data.product_id = Product.objects.get(id=product_id)
-
             messages.success(request, 'Your review is added')
             return redirect(reverse('product_detail', args=[product.id]))
            
@@ -91,7 +89,7 @@ def product_detail(request, product_id):
     if product_review:
         review_count = ProductReview.objects.filter(product_id=product_id).count()
         rating = form['rating']
-        rating_avarage = round(product_review.aggregate(Avg('rating'))['rating__avg'])     
+        rating_avarage = round(product_review.aggregate(Avg('rating'))['rating__avg'],2)     
        
     else:
         rating_avarage = "_"

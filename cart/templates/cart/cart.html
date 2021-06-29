@@ -88,16 +88,18 @@
                         
                         <tr>
                             <!--coupon code-->
-                            <td>
-                                {%if request.user.is_authenticated%}
-
-                                    <form action="" method="POST">
-                                        <p> Enter the promo code </p>
-                                        <input type="text" id="coupon" class="uppercase">                                   
-                                        <button type="submit"> Apply</button>
-            
-                                    </form>
-                                {%endif%}
+                            <td>              
+                                <form class="card p-2" action="{% url 'add_coupon' %}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="input-group">
+                                        {{ coupon_form.code  }}
+                                        <div class="input-group-append">
+                                        <button class="btn btn-secondary btn-md waves-effect m-0" type="submit">Redeem</button>
+                                        </div>
+                                    </div>
+                                </form>                
+                                
+                                
 
                             </td>
                             <td colspan="5" class="pt-5 text-right">
