@@ -40,8 +40,7 @@ class ProductReview(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE )
     review_headline = models.CharField(max_length=254, null=True, blank=False)
     review_text = models.TextField(null=True, max_length=1000, blank=False)
-    rating = models.DecimalField(default=1, max_digits=6, decimal_places=2, null=True,
-                                 blank=True)
+    rating = models.IntegerField(default=1)
     review_date = models.DateField(auto_now_add=True)
 
     def __str__(self):

@@ -62,8 +62,8 @@
                             </a>	
                         </p>	
                         {% endif %}	
-                        {% if product.rating %}	
-                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>	
+                        {% if rating_avarage %}	
+                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{rating_avarage}} / 5</small>	
                         {% else %}	
                             <small class="text-muted">No Rating</small>	
                         {% endif %}	
@@ -134,20 +134,29 @@
                 </form>
 
         {%endif%}
-                {%if product_review %}
-                    {% for review in product_review %}                 
-                        <div class="col-6">
-                            <div class="d-block"> {{review.review_headline}}   </div>
-                            <div class="d-block"> {{review.review_text }}</div>
-                            <div class="d-block"> {{review.user }}</div>
-                            <div class="d-block"> {{review.review_date }}</div>                           
-
-                        </div>
-                        <hr>                    
-                    {%endfor%}
-                {%endif%}  
+                
                
             </div>
+
+            {%if product_review %}
+            
+                <p>{{review_count}} many reviews for this product</p> 
+                    {% for review in product_review %}
+                    <hr>
+                  
+                        <h5 class="card-header">
+                            {{review.user }}  <span class="small muted"> {{review.review_date }} </span>
+                        </h5>
+                        <hr>
+                        <div class="card-body">
+                          <h5 class="card-title">{{review.review_headline}}</h5>
+                          <p class="card-text">{{review.review_text }}</p>
+                          <p class="small muted">{{review.rating }}</p>
+                          
+                        </div>
+                                              
+                    {%endfor%}
+                {%endif%}  
        
 
        

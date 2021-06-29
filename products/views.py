@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
+from django.db.models import Q, Avg
 from django.db.models.functions import Lower
 from .models import Product, Category, ProductReview
 from .forms import ProductForm, ProductReviewForm
@@ -59,7 +59,7 @@ def all_products(request):
 
 def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-     
+    review_count=None
     
     if request.method == 'POST':
        
@@ -76,6 +76,7 @@ def product_detail(request, product_id):
             data.product = product
             data.save()         
             data.product_id = Product.objects.get(id=product_id)
+
             messages.success(request, 'Your review is added')
             return redirect(reverse('product_detail', args=[product.id]))
            
@@ -84,14 +85,24 @@ def product_detail(request, product_id):
             messages.error(request, 'Failed to add please check your form')            
             return redirect(reverse('product_detail', args=[product.id]))
     else:
-        form = ProductReviewForm()      
-   
+        form = ProductReviewForm()   
+
     product_review = ProductReview.objects.filter(product_id=product_id)
+    if product_review:
+        review_count = ProductReview.objects.filter(product_id=product_id).count()
+        rating = form['rating']
+        rating_avarage = round(product_review.aggregate(Avg('rating'))['rating__avg'])     
+       
+    else:
+        rating_avarage = "_"
+            
     template = 'products/product_detail.html'    
     context = {
         'product': product,
         'form':form,
         'product_review':product_review,
+        'review_count': review_count,
+        'rating_avarage':rating_avarage,
         
     }
     return render(request,template , context)
