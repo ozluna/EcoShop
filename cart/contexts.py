@@ -8,8 +8,7 @@ from django.contrib import messages
 from products.models import Product
 from .models import Coupon
 from .forms import CouponForm
-
-
+from .views import add_coupon
 
 
 
@@ -22,6 +21,9 @@ def cart_contents(request):
     cart = request.session.get('cart', {})
     coupon_id = request.session.get('coupon_id', int())
     code = None
+    on_profile_page = False
+    amount = 0
+    
 
     for item_id, quantity in cart.items():
         product = get_object_or_404(Product, pk=item_id)
@@ -33,21 +35,33 @@ def cart_contents(request):
             'product': product,
         })
     
-    try:
-        code = Coupon.objects.get(id=coupon_id)
-    except Coupon.DoesNotExist:
-        code = None
+    
  
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
     else:
         delivery = 0
-        free_delivery_delta = 0 
-        
+        free_delivery_delta = 0   
 
+    old_total= total    
+    try:
+        code = Coupon.objects.get(id=coupon_id)
+        if code !=None:
+            
+            on_profile_page=True
+            amount = total*code.amount
+            total = total - amount
+            print(total)
+            print(amount)
+            print(f'I am working {on_profile_page}')
+    except Coupon.DoesNotExist:
+        code = None
 
-    grand_total = delivery + total
+    grand_total = delivery + total      
+
+    
+              
 
     context = {
         'cart_items': cart_items,
@@ -58,6 +72,9 @@ def cart_contents(request):
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
         'code': code,
+        'amount':amount,
+        'on_profile_page':on_profile_page,
+        'old_total':old_total,
     }
 
     return context

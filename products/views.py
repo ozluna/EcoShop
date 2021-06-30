@@ -60,14 +60,15 @@ def all_products(request):
 def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     review_count=None
+    on_profile_page =False
     
     if request.method == 'POST':
        # once the form is posted collecting the user input
         review_form_data ={
         'review_headline':request.POST['review_headline'],
         'review_text':request.POST['review_text'],
-        'rating':request.POST['rating'],        
-        }
+        'rating':request.POST['rating'],          }       
+        
         form = ProductReviewForm(review_form_data)
         if form.is_valid():
             data = form.save(commit=False) # review not saved yet            
@@ -75,18 +76,22 @@ def product_detail(request, product_id):
             data.product = product
             data.save()         
             data.product_id = Product.objects.get(id=product_id)
-            messages.success(request, 'Your review is added')
+            messages.success(request, 'Your review is added')            
+            on_profile_page=True
+            print(f'it was me2 {on_profile_page}')
             return redirect(reverse('product_detail', args=[product.id]))
            
-        else:
+        else:            
             form = ProductReviewForm(instance=product)
             messages.error(request, 'Failed to add please check your form')            
             return redirect(reverse('product_detail', args=[product.id]))
     else:
-        form = ProductReviewForm()   
-
+        form = ProductReviewForm()  
+        
     product_review = ProductReview.objects.filter(product_id=product_id)
     if product_review:
+        on_profile_page=True
+        print(f'it was me6 {on_profile_page}')
         review_count = ProductReview.objects.filter(product_id=product_id).count()
         rating = form['rating']
         rating_avarage = round(product_review.aggregate(Avg('rating'))['rating__avg'],2)     
@@ -94,6 +99,7 @@ def product_detail(request, product_id):
     else:
         rating_avarage = "_"
             
+    print(f'it was me7 {on_profile_page}')
     template = 'products/product_detail.html'    
     context = {
         'product': product,
@@ -101,6 +107,7 @@ def product_detail(request, product_id):
         'product_review':product_review,
         'review_count': review_count,
         'rating_avarage':rating_avarage,
+        'on_profile_page':on_profile_page,
         
     }
     return render(request,template , context)
