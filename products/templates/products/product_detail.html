@@ -52,12 +52,8 @@
                         {% if product.category %}	
                         <p class="small mt-1 mb-0">	
                             <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">	
-                                {% if product.rating == 3 %} 
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-                                    <i class="far fa-star"></i>
+                                {% if product.rating %} 
+                                
                                 {% endif %}
                             </a>	
                         </p>	
@@ -140,19 +136,21 @@
 
             {%if product_review %}
             
-                <p>{{review_count}} many reviews for this product</p> 
+                <p>{{review_count}} reviews found for this product</p> 
                     {% for review in product_review %}
-                    <hr>
-                  
+                    <hr>                  
                         <h5 class="card-header">
-                            {{review.user }}  <span class="small muted"> {{review.review_date }} </span>
+                            {{review.user }} ,  <span class="small muted"> {{review.review_date }} </span>
+                            <span class="stars-outer">
+                                <span class="stars-inner" style="width:{{rating_percentage}}%;"></span>
+                            </span>
                         </h5>
                         <hr>
                         <div class="card-body">
                           <h5 class="card-title">{{review.review_headline}}</h5>
                           <p class="card-text">{{review.review_text }}</p>
                           <p class="small muted">{{review.rating }}</p>
-                          
+                         
                         </div>
                                               
                     {%endfor%}

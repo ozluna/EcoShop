@@ -21,7 +21,6 @@ def cart_contents(request):
     cart = request.session.get('cart', {})
     coupon_id = request.session.get('coupon_id', int())
     code = None
-    on_profile_page = False
     amount = 0
     
 
@@ -47,19 +46,14 @@ def cart_contents(request):
     old_total= total    
     try:
         code = Coupon.objects.get(id=coupon_id)
-        if code !=None:
+        if code !=None:           
             
-            on_profile_page=True
             amount = total*code.amount
-            total = total - amount
-            print(total)
-            print(amount)
-            print(f'I am working {on_profile_page}')
+            total = total - amount            
     except Coupon.DoesNotExist:
         code = None
 
-    grand_total = delivery + total      
-
+    grand_total = delivery + total 
     
               
 
@@ -72,8 +66,7 @@ def cart_contents(request):
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
         'code': code,
-        'amount':amount,
-        'on_profile_page':on_profile_page,
+        'amount':amount,        
         'old_total':old_total,
     }
 

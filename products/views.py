@@ -5,6 +5,7 @@ from django.db.models import Q, Avg
 from django.db.models.functions import Lower
 from .models import Product, Category, ProductReview
 from .forms import ProductForm, ProductReviewForm
+from profiles.models import UserProfile
 
 
 # Create your views here.
@@ -90,11 +91,14 @@ def product_detail(request, product_id):
         
     product_review = ProductReview.objects.filter(product_id=product_id)
     if product_review:
-        on_profile_page=True
-        print(f'it was me6 {on_profile_page}')
+        on_profile_page=True        
         review_count = ProductReview.objects.filter(product_id=product_id).count()
         rating = form['rating']
-        rating_avarage = round(product_review.aggregate(Avg('rating'))['rating__avg'],2)     
+        rating_avarage = round(product_review.aggregate(Avg('rating'))['rating__avg'],2) 
+        """ multiply the avarage with 100 and divide to 5 will give us the percentage
+            I multiply by 20 which gives the same result."""
+        rating_percentage = rating_avarage*20 
+        
        
     else:
         rating_avarage = "_"
@@ -108,6 +112,7 @@ def product_detail(request, product_id):
         'review_count': review_count,
         'rating_avarage':rating_avarage,
         'on_profile_page':on_profile_page,
+        'rating_percentage':rating_percentage,
         
     }
     return render(request,template , context)
@@ -177,8 +182,6 @@ def delete_product(request, product_id):
     messages.success('Product deleted!')
     
     return redirect(reverse('products'))
-
-
 
        
 

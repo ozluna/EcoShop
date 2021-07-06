@@ -1,6 +1,7 @@
 from django.db import models
 from profiles.models import UserProfile
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
@@ -40,7 +41,7 @@ class ProductReview(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE )
     review_headline = models.CharField(max_length=254, null=True, blank=False)
     review_text = models.TextField(null=True, max_length=1000, blank=False)
-    rating = models.IntegerField(default=1)
+    rating = models.FloatField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     review_date = models.DateField(auto_now_add=True)
 
     def __str__(self):

@@ -219,7 +219,7 @@ body{
   
 .stars-inner::before {
     content: "\f005 \f005 \f005 \f005 \f005";
-    color: #83C5BE;
+    color: gold;
   }
 
 input[name='q']::placeholder {
