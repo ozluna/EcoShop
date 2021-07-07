@@ -59,7 +59,9 @@
                         </p>	
                         {% endif %}	
                         {% if rating_avarage %}	
-                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{rating_avarage}} / 5</small>	
+                            <span class="stars-outer">
+                                <span class="stars-inner" style="width:{{rating_percentage}}%;"></span>
+                            </span>	
                         {% else %}	
                             <small class="text-muted">No Rating</small>	
                         {% endif %}	
@@ -129,7 +131,13 @@
                     <button class=" float-right btn-add" action="submit" value="Submit"> Submit</button>
                 </form>
 
-        {%endif%}
+            {% else %}    
+                <div class="mt-4">
+                    <p>Login to leave a review
+                        <a href="{% url 'account_login' %}">log in.</a>
+                    </p>
+                </div>
+            {% endif %}
                 
                
             </div>
@@ -139,17 +147,17 @@
                 <p>{{review_count}} reviews found for this product</p> 
                     {% for review in product_review %}
                     <hr>                  
-                        <h5 class="card-header">
-                            {{review.user }} ,  <span class="small muted"> {{review.review_date }} </span>
-                            <span class="stars-outer">
-                                <span class="stars-inner" style="width:{{rating_percentage}}%;"></span>
-                            </span>
+                        <h5 class="card-header font-weight-bold">
+                            {{review.user }} 
+                            <!--<span class="stars-outer">
+                                <span class="stars-inner" style="width:{{review.rating}}%;"></span>
+                            </span>  -->                      
                         </h5>
                         <hr>
-                        <div class="card-body">
-                          <h5 class="card-title">{{review.review_headline}}</h5>
-                          <p class="card-text">{{review.review_text }}</p>
-                          <p class="small muted">{{review.rating }}</p>
+                        <div class="col-12">
+                          <h5 class=" text-capitalize font-weight-bold font-italic">"{{review.review_headline}}"</h5>
+                          <p >{{review.review_text }}</p>
+                          <p class="small muted">{{review.review_date }}</p>
                          
                         </div>
                                               

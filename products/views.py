@@ -62,6 +62,8 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     review_count=None
     on_profile_page =False
+    rating_percentage = None
+    indv_rating = None
     
     if request.method == 'POST':
        # once the form is posted collecting the user input
@@ -75,11 +77,13 @@ def product_detail(request, product_id):
             data = form.save(commit=False) # review not saved yet            
             data.user = request.user                  
             data.product = product
-            data.save()         
+            data.rating = form.cleaned_data['rating']
+            data.save()             
+            indv_rating = data.rating
+            print(f'indviual{indv_rating}')
             data.product_id = Product.objects.get(id=product_id)
             messages.success(request, 'Your review is added')            
             on_profile_page=True
-            print(f'it was me2 {on_profile_page}')
             return redirect(reverse('product_detail', args=[product.id]))
            
         else:            
@@ -93,17 +97,15 @@ def product_detail(request, product_id):
     if product_review:
         on_profile_page=True        
         review_count = ProductReview.objects.filter(product_id=product_id).count()
-        rating = form['rating']
+        rating = form['rating']            
         rating_avarage = round(product_review.aggregate(Avg('rating'))['rating__avg'],2) 
         """ multiply the avarage with 100 and divide to 5 will give us the percentage
             I multiply by 20 which gives the same result."""
-        rating_percentage = rating_avarage*20 
-        
-       
+        rating_percentage = rating_avarage*20    
     else:
-        rating_avarage = "_"
+        rating_avarage = None
             
-    print(f'it was me7 {on_profile_page}')
+    
     template = 'products/product_detail.html'    
     context = {
         'product': product,
@@ -113,6 +115,7 @@ def product_detail(request, product_id):
         'rating_avarage':rating_avarage,
         'on_profile_page':on_profile_page,
         'rating_percentage':rating_percentage,
+        'indv_rating':indv_rating,
         
     }
     return render(request,template , context)

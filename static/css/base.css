@@ -201,7 +201,8 @@ body{
 .stars-outer {
     display: inline-block;
     position: relative;
-    font-family: "FontAwesome 5 Free";
+    font-family: "Font Awesome\ 5 Free";
+    font-weight: 900;
   }
   
   .stars-outer::before {
@@ -254,7 +255,7 @@ input[name='q']::placeholder {
 
 .allauth-form-inner-content input {
   border-color: #000;
-  border-radius: 0;
+  
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -277,22 +278,22 @@ display: inline-block;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #000;
-  border: 1px solid #000;
+  background-color: #e29578;
+  border: 1px solid #e29578;
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 0;
+ 
 
   /* standard bootstrap btn transitions */
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .allauth-form-inner-content button:hover,
-.allauth-form-inner-content input[type='submit']:hover {	
-color: #fff;
-  background-color: #222;
-  border-color: #222;
+.allauth-form-inner-content input[type='submit']:hover {	 
+  border-color: #ffddd2;
+  background-color: #ffddd2;
+  color: #43250F;
 }
 
 .allauth-form-inner-content a {

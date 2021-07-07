@@ -37,11 +37,19 @@ class Product(models.Model):
 
 class ProductReview(models.Model):
     # review  model
+    Rate_Choices=[
+        (1,'1'),
+        (2,'2'),
+        (3,'3'),
+        (4,'4'),
+        (5,'5'),
+    ]
+
     product = models.ForeignKey(Product, null=True, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE )
     review_headline = models.CharField(max_length=254, null=True, blank=False)
     review_text = models.TextField(null=True, max_length=1000, blank=False)
-    rating = models.FloatField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    rating = models.IntegerField(choices=Rate_Choices)
     review_date = models.DateField(auto_now_add=True)
 
     def __str__(self):
