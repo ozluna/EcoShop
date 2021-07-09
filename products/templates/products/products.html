@@ -88,8 +88,8 @@
                                         <p class="card-text text-center"> £{{ product.price }} </p>
                                        
                                     </div>
-                                    <div class="card-footer bg-white pt-0 border-0 text-left">
-                                        <div class="row">
+                                    <div class="card-footer bg-white pt-0 border-0 text-center">
+                                        <div class="row m-0">
                                             <div class="col-12 text-center py-2">                                         
                                                 <form class="form" action="{% url 'add_cart' product.id %}" method="POST">
                                                     {% csrf_token %}
@@ -97,17 +97,7 @@
                                                     <input type="hidden" name="redirect_url" value="{% url 'products' %}">
                                                 </form>
                                             </div>
-                                            <div class="col-12 text-center">
-                                                {% if product.rating %}
-                                                    <div class="stars-outer">
-                                                        <div class="stars-inner"></div>
-                                                    </div>
-                                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                                                {% else %}
-                                                    <div>
-                                                        <small class="text-muted">No Rating</small>
-                                                    </div>
-                                                {% endif %}
+                                            <div class="col-12 text-center">                                                
                                                 {% if request.user.is_superuser %}
                                                     <small class="ml-3">
                                                         <a href="{% url 'edit_product' product.id %}">Edit</a> | 

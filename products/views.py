@@ -79,7 +79,7 @@ def product_detail(request, product_id):
             data.product = product
             data.rating = form.cleaned_data['rating']
             data.save()             
-            indv_rating = data.rating
+            indv_rating = data.rating            
             print(f'indviual{indv_rating}')
             data.product_id = Product.objects.get(id=product_id)
             messages.success(request, 'Your review is added')            
@@ -90,9 +90,11 @@ def product_detail(request, product_id):
             form = ProductReviewForm(instance=product)
             messages.error(request, 'Failed to add please check your form')            
             return redirect(reverse('product_detail', args=[product.id]))
+        
     else:
         form = ProductReviewForm()  
-        
+
+     
     product_review = ProductReview.objects.filter(product_id=product_id)
     if product_review:
         on_profile_page=True        
@@ -104,8 +106,8 @@ def product_detail(request, product_id):
         rating_percentage = rating_avarage*20    
     else:
         rating_avarage = None
-            
     
+      
     template = 'products/product_detail.html'    
     context = {
         'product': product,

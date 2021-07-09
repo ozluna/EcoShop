@@ -9,6 +9,9 @@ body{
     font-family: 'Poppins';
     
 }
+.second_color{
+  color:#006D77 !important;
+}
 .header-container{
   padding-bottom: 3em;
 }
@@ -49,10 +52,9 @@ body{
 }
 /* Tagline*/
 .motto {     
-	width: 564px;
+	max-width: 564px;
 	height: 84px;	
-	font-family: "PT+Serif";
-	font-size: 40px;
+	font-family: "PT+Serif";	
 	line-height: 1;
 	text-align: center;
 }
@@ -69,7 +71,7 @@ body{
     font-size: 18px;
     letter-spacing: 1px;
     text-align: center;
-    min-width: 260px;
+    min-width: 16.25rem;
 }
 
 .shop-now-button:hover,
@@ -366,10 +368,14 @@ color: #17a2b8; /* text-info */
     max-width: 80%;
   }
 }
-@media (max-width: 1620px) and (min-width: 768px) {
-    .kitchen{
-        display: none;
-    }
+@media (max-width: 991px) and (min-width: 768px) {
+  .float-md-start img{
+    max-width: 21rem;
+  }
+  .skincare{
+    margin-left: 1.5rem;
+  }
+  
 }
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -386,8 +392,22 @@ color: #17a2b8; /* text-info */
     }
     
 }
-@media(max-width:992px){
-  .breadcrumb{
-    margin-top:9rem;
-  }
+@media(max-width:991px){
+.motto {
+    font-size: 2rem;
+}
+.navbar-toggler {
+    padding: .6rem .6rem;
+    font-size: 1rem;
+}
+.breadcrumb{
+  margin-top:9rem;
+}
+.nav-link {
+  padding: 0.15rem;
+}
+
+.nav-link i.fa-lg {
+  font-size: 1rem;
+}
 }

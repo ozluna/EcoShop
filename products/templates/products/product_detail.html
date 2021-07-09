@@ -147,17 +147,17 @@
                 <p>{{review_count}} reviews found for this product</p> 
                     {% for review in product_review %}
                     <hr>                  
-                        <h5 class="card-header font-weight-bold">
-                            {{review.user }} 
+                        <h5 class=" font-weight-bold">
+                            {{review.user }},   <span class="small muted">{{review.review_date }}</span>
                             <!--<span class="stars-outer">
                                 <span class="stars-inner" style="width:{{review.rating}}%;"></span>
                             </span>  -->                      
-                        </h5>
-                        <hr>
+                        </h5>                        
+                        
                         <div class="col-12">
-                          <h5 class=" text-capitalize font-weight-bold font-italic">"{{review.review_headline}}"</h5>
+                          <h6 class=" text-capitalize font-weight-bold font-italic">"{{review.review_headline}}"</h6>
                           <p >{{review.review_text }}</p>
-                          <p class="small muted">{{review.review_date }}</p>
+                          
                          
                         </div>
                                               

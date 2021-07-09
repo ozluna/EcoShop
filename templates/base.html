@@ -68,8 +68,8 @@
                     <li class="list-inline-item dropdown">
                         <a class="color nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
-                                <div><i class="fas fa-user-circle fa-lg text-dark"></i></div>
-                                <p class="my-0 text-dark"></p>
+                                <div><i class="fas fa-user-circle fa-lg second_color"></i></div>
+                                <p class="my-0 second_color"></p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -89,13 +89,13 @@
                     <li class="list-inline-item" style="display: inline-flex;">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text{% endif %} nav-link" href="{% url 'view_cart' %}">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-cart fa-md text-success"></i>
+                                <div><i class="fas fa-shopping-cart fa-md second_color"></i>
                                     <!--this is not working atm-->
                                     {% if cart_items %}
                                         <span class="badge rounded-pill">{{ item_count }}</span>
                                     {% endif %}
                                 </div>
-                                <p class="my-0 text-success">
+                                <p class="my-0">
                                     {% if grand_total %}
                                         £{{ grand_total|floatformat:2 }}
                                     {% else %}
@@ -109,7 +109,7 @@
             </div>
         </div>
         <div class="row bg-white">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <nav class="navbar navbar-expand-lg second_color w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -217,15 +217,22 @@
         
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
+                    <!--Direct Contact -->
                     <h6 class="text-uppercase fw-bold mb-4">
                         Send Us Message
-                    </h6>
-                <form action="" >
-                    <input class="form-control border" type="fullname" placeholder="fullname">
-                    <input class="form-control border" type="email" name="" id="" placeholder="email">
-                    <input class="form-control border" type="text-field" placeholder="Message">
-                </form>
+                    </h6>                 
+                            <div class="center-form">
+                              <form onsubmit="return sendMail(this);">
+                                <input type="text" name="name" id="fullname"  size="40"  class="form-control px-4 py-2"  placeholder="Name" required/>
+                                <input type="email"  name="email" id="email" class="form-control px-4 py-2" placeholder="Email" required/>
+                                <textarea name="yourmessage" id="yourmessage" class="form-control px-4 py-2" cols="5"  rows="5" placeholder="Your Message" required></textarea>
+                                <div class="col-xs-2 col-sm-2 col-md-8 col-lg-12 col-xl-12 m-auto py-3">
+                                <button type="submit" value="Submit" class="btn ">  Send </button>
+                                </div>
+                              </form>
+                            </div>
+                         
+                      
                 </div>
                 <!-- Grid column -->
         
