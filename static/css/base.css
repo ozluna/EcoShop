@@ -80,9 +80,9 @@ body{
 .btn:hover,
 .btn:active,
 .btn:focus {
-    background: #ffddd2;
-    border-color: #ffddd2;
-    color: #43250F;
+    background: #ffddd2 !important;
+    border-color: #ffddd2 !important;
+    color: #43250F !important;
 }
 .main-logo-link {
     width: fit-content;
@@ -395,6 +395,9 @@ color: #17a2b8; /* text-info */
 @media(max-width:991px){
 .motto {
     font-size: 2rem;
+}
+.heading-title{
+  margin-top: 2.5rem;
 }
 .navbar-toggler {
     padding: .6rem .6rem;
