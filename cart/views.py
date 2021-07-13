@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (render, redirect, reverse,
+                              HttpResponse, get_object_or_404)
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils import timezone
@@ -13,21 +14,17 @@ from .forms import CouponForm
 
 def view_cart(request):
     # A view renders the cart contents page
-    coupon_form = CouponForm(request.POST) 
-   
-
-    context ={
+    coupon_form = CouponForm(request.POST)
+    context = {
         'coupon_form': coupon_form,
-       
-        
-        }
+    }
     return render(request, 'cart/cart.html', context)
 
 
 def add_cart(request, item_id):
     # Add specified item to the cart
 
-    product = get_object_or_404(Product,pk=item_id)
+    product = get_object_or_404(Product, pk=item_id)
     if request.POST.get("quantity"):
         quantity = int(request.POST.get('quantity'))
     else:
@@ -37,7 +34,7 @@ def add_cart(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
-        messages.success(request, f'Updated {product.name} quantity to{cart[item_id]}')
+        messages.success(request, f'Updated {product.name}quantity to{cart[item_id]}')
     else:
         cart[item_id] = quantity
         messages.success(request, f'Added {product.name} to you cart')
