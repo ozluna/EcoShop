@@ -76,11 +76,8 @@ def product_detail(request, product_id):
         if form.is_valid():
             data = form.save(commit=False) # review not saved yet            
             data.user = request.user                  
-            data.product = product
-            data.rating = form.cleaned_data['rating']
-            data.save()             
-            indv_rating = data.rating            
-            print(f'indviual{indv_rating}')
+            data.product = product            
+            data.save()            
             data.product_id = Product.objects.get(id=product_id)
             messages.success(request, 'Your review is added')            
             on_profile_page=True
@@ -103,7 +100,8 @@ def product_detail(request, product_id):
         rating_avarage = round(product_review.aggregate(Avg('rating'))['rating__avg'],2) 
         """ multiply the avarage with 100 and divide to 5 will give us the percentage
             I multiply by 20 which gives the same result."""
-        rating_percentage = rating_avarage*20    
+        rating_percentage = rating_avarage*20
+        print(rating_percentage)    
     else:
         rating_avarage = None
     

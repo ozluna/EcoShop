@@ -60,18 +60,24 @@ body{
 }
 /* Button*/
 .shop-now-button{
-    padding: 0px 10px 0px 10px;
+  padding: 0px 10px 0px 10px;
+  background: #e29578;
+  color: whitesmoke;
+  border-color: #e29578;
+  border-width: 1px;
+  border-style: solid;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+  min-width: 16.25rem;
+}
+
+.btn{
     background: #e29578;
     color: whitesmoke;
     border-color: #e29578;
-    border-width: 1px;
-    border-style: solid;
-    font-family: "Poppins";
-    font-weight: 500;
-    font-size: 18px;
-    letter-spacing: 1px;
-    text-align: center;
-    min-width: 16.25rem;
 }
 
 .shop-now-button:hover,
@@ -215,8 +221,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    white-space: nowrap;
-    overflow: hidden;
+    white-space: nowrap;    
     width: 0;
   }
   

@@ -52,6 +52,10 @@ class ProductReview(models.Model):
     rating = models.IntegerField(choices=Rate_Choices)
     review_date = models.DateField(auto_now_add=True)
 
+    @property
+    def indv_rating(self):
+        return self.rating*20
+
     def __str__(self):
         return self.user.username
 
