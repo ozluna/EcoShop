@@ -74,25 +74,30 @@ def remove_cart(request, item_id):
         messages.error(request,f'Error removing the item {e}')
         return HttpResponse(status=500)
 
-def add_coupon(request):    
+def view_cart(request):
+    # A view renders the cart contents page
+    coupon_form = CouponForm(request.POST) 
+
+    context ={
+        'coupon_form': coupon_form,
+
+        }
+    return render(request, 'cart/cart.html', context)
+
+
+def add_coupon(request):        
+    coupon_form_data = {'code':request.POST['code']}
+    coupon_form = CouponForm(coupon_form_data)    
+    # check if the form is valid
+    if coupon_form.is_valid:
+        code = coupon_form.cleaned_data['code']  
+        try:                  
+            coupon = Coupon.objects.get(code=code)
+            request.session['coupon_id'] = coupon.id                                             
+            messages.success(request, 'Your code is applied to your cart')
+        except ObjectDoesNotExist:
+            print('you enter wrong code mate')
+            request.session['coupon_id'] = None
+            messages.error(request,'Code you enter is not valid')
     
-    if request.method == 'POST':
-        now =timezone.now()
-        # getting the user input
-        coupon_form_data = {'code':request.POST['code']}
-        coupon_form = CouponForm(coupon_form_data) 
-                  
-        # check if the form is valid
-        if coupon_form.is_valid:
-            code = coupon_form.cleaned_data['code']  
-            try:                  
-                coupon = Coupon.objects.get(code=code)
-                request.session['coupon_id'] = coupon.id                                             
-                messages.success(request, 'Your code is applied to your cart')
-            except ObjectDoesNotExist:                
-                request.session['coupon_id'] = None
-                messages.error(request,'Code you enter is not valid')
-                return redirect(reverse(view_cart))
-        
-           
     return redirect(reverse(view_cart))

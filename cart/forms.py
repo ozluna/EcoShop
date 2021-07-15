@@ -5,5 +5,4 @@ class CouponForm(forms.ModelForm):
     code = forms.CharField()
     class Meta:
         model = Coupon
-        fields = ('code',)
-        
+        fields = ('code',)        

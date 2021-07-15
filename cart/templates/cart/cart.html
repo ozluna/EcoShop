@@ -60,9 +60,11 @@
                     <table>
                         <thead>
                           <tr>
-                              <th scope="col">Product Name</th>
+                              <th scope="col">Product Name</th>                              
                               <th scope="col">Item Name</th>
                               <th scope="col">Quantity</th>
+                              <th></th>
+                              <th></th>
                               <th scope="col">Item Price</th>
                           </tr>
                         </thead>
@@ -85,6 +87,7 @@
                             <td> 
                                 {% include "cart/quantity-form.html"%}
                             </td>
+                            <td></td>
                             <td class="py-3 px-3">
                                 <p class="my-0">£{{ item.product.price | subtotal:item.quantity}}</p>
                             </td>                
@@ -119,7 +122,7 @@
              
             {% else %}
                 <p class="lead mb-5">Your cart is empty.</p>
-                <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                <a href="{% url 'products' %}" class="btn btn-lg">
                     <span class="icon">
                         <i class="fas fa-chevron-left"></i>
                     </span>
