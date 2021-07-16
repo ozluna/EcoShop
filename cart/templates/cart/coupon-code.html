@@ -1,9 +1,9 @@
 <form class="card p-2" action="{% url 'add_coupon' %}" method="POST" >
     {% csrf_token %}
-    <div class="input-group" aria-placeholder="Apply your coupon here">
+    <div class="input-group">
         {{ coupon_form.code  }}
         <div class="input-group-append">
-        <button class="btn btn-secondary btn-md waves-effect m-0" type="submit" >Apply</button>
+        <button class="btn waves-effect coupon-btn m-0" type="submit">Apply</button>
         </div>
     </div>
 </form>  
