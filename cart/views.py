@@ -2,6 +2,7 @@ from django.shortcuts import (render, redirect, reverse,
                               HttpResponse, get_object_or_404)
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
+from django.views.decorators.http import require_http_methods
 from django.utils import timezone
 
 from products.models import Product
@@ -87,7 +88,8 @@ def view_cart(request):
 
 def add_coupon(request):        
     coupon_form_data = {'code':request.POST['code']}
-    coupon_form = CouponForm(coupon_form_data)    
+    coupon_form = CouponForm(coupon_form_data) 
+    print(coupon_form)
     # check if the form is valid
     if coupon_form.is_valid:
         code = coupon_form.cleaned_data['code']  
@@ -99,5 +101,4 @@ def add_coupon(request):
             print('you enter wrong code mate')
             request.session['coupon_id'] = None
             messages.error(request,'Code you enter is not valid')
-    
-    return redirect(reverse(view_cart))
+        return redirect(reverse(view_cart))
