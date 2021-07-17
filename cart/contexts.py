@@ -36,7 +36,7 @@ def cart_contents(request):
     try:
         code = Coupon.objects.get(id=coupon_id)
         if code is not None:
-            amount = total * code.amount
+            amount = round((total * code.amount)/100, 2)
             total = total - amount
     except Coupon.DoesNotExist:
         code = None

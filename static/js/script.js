@@ -8,7 +8,4 @@ function delayShow(){ setTimeout(() => {
 document.addEventListener("DOMContentLoaded", function(event) {
     
     });
-
-/// cartand product details quantity control
-
     

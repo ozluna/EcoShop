@@ -401,10 +401,9 @@ color: #17a2b8; /* text-info */
 }
 }
 
-@media (min-width:768) {
-  
- code-text{
-   width:85% !important;
+@media (max-width:768) {  
+ .code-text{
+  width:85% !important;
  }
   
 }
