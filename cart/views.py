@@ -2,7 +2,6 @@ from django.shortcuts import (render, redirect, reverse,
                               HttpResponse, get_object_or_404)
 from django.contrib import messages
 from django.core.exceptions import ObjectDoesNotExist
-from django.views.decorators.http import require_http_methods
 from django.utils import timezone
 
 from products.models import Product

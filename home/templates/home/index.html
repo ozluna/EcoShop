@@ -8,27 +8,8 @@
         </div>
     </div>
 {%endblock%}
-{% block content %}
+{% block content %}    
 
-<div class="modal fade" id="newsLetter" tabindex="-1" role="dialog" aria-labelledby="newsLetterLabel" aria-hidden="true"  data-toggle="modal-onload" data-modal-delay="10000">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="newsLetterLabel">Apply DISCOUNT20 to get 20% discount </h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Use 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Send message</button>
-        </div>
-      </div>
-    </div>
-  </div>
 <div class="hero-img">    
     <div class="container">
                 <h2 class="motto mx-auto logo-font">
@@ -128,6 +109,37 @@
        
     </div>
 </div>
-
-
+<div>
+    <!-- The Modal -->
+    <div class="modal fade" id="discountmodal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">            
+            <!-- Modal Header -->
+            <div class="modal-header">               
+                <button type="button" class="close" data-dismiss="modal"><span class=""><i class=" second-color far fa-window-close"></i></span></button>
+            </div>            
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="modal-img">
+                <img src="{{ MEDIA_URL }}DISCOUNT20.png" alt="DISCOUNT20">                    
+                </div>                
+            </div>        
+        </div>
+    </div>      
+</div>
 {% endblock %}
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+       $(window).on('load',delayShow);
+
+    function delayShow(){ setTimeout(() => {
+        $('#discountmodal').modal('show');
+        console.log("modal function works");
+    }, 3000);}
+    /// clear out the delayshow if it is called once(after it called once)
+    document.addEventListener("DOMContentLoaded", function(event) {
+        console.log("Hello! I am loaded");
+        });    
+    </script>
+{%endblock%}

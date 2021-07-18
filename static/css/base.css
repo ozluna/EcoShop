@@ -41,6 +41,9 @@ body{
     width: 200px;
     height: 100px;
 }
+.modal-img image{
+  width: 100%;
+}
 .hero-img {
     margin-top: auto;
     background: url(/media/hero-image.png) no-repeat right top;
@@ -342,9 +345,9 @@ color: #17a2b8; /* text-info */
   }
 }
 @media (max-width: 991px) and (min-width: 768px) {
-  .float-md-start img{
+ /* .float-md-start img{
     max-width: 21rem;
-  }
+  }*/
   .skincare{
     margin-left: 1.5rem;
   }
