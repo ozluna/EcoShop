@@ -116,12 +116,12 @@
             <div class="modal-content">            
             <!-- Modal Header -->
             <div class="modal-header">               
-                <button type="button" class="close" data-dismiss="modal"><span class=""><i class=" second-color far fa-window-close"></i></span></button>
+                <button type="button" class="close" data-dismiss="modal"><span style="color:#006D77 ;"><i class=" far fa-window-close"></i></span></button>
             </div>            
             <!-- Modal body -->
             <div class="modal-body">
                 <div class="modal-img">
-                <img src="{{ MEDIA_URL }}DISCOUNT20.png" alt="DISCOUNT20">                    
+                <img style="width: 100%;" src="{{ MEDIA_URL }}DISCOUNT20.png" alt="DISCOUNT20">                    
                 </div>                
             </div>        
         </div>
@@ -132,7 +132,6 @@
     {{ block.super }}
     <script type="text/javascript">
        $(window).on('load',delayShow);
-
     function delayShow(){ setTimeout(() => {
         $('#discountmodal').modal('show');
         console.log("modal function works");

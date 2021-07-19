@@ -41,9 +41,7 @@ body{
     width: 200px;
     height: 100px;
 }
-.modal-img image{
-  width: 100%;
-}
+
 .hero-img {
     margin-top: auto;
     background: url(/media/hero-image.png) no-repeat right top;

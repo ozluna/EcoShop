@@ -34,7 +34,7 @@ def add_cart(request, item_id):
 
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
-        messages.success(request, f'Updated {product.name}quantity to{cart[item_id]}')
+        messages.success(request, f'Updated {product.name} quantity to {cart[item_id]}')
     else:
         cart[item_id] = quantity
         messages.success(request, f'Added {product.name} to you cart')
@@ -55,7 +55,7 @@ def adjust_cart(request, item_id):
             messages.success(request, f'Updated {product.name} quantity to {cart[item_id]}')
         else:
             cart.pop(item_id)
-            messages.success(request, f'{cart[item_id]} sucessfully removed')
+            messages.success(request, f'{cart[item_id]}   sucessfully removed')
 
     request.session['cart'] = cart
     return redirect(reverse(view_cart))
