@@ -47,8 +47,7 @@
                             </a>
                         </div>
                         <div class="col-7">
-                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                            <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                            <p class="my-0"><strong>{{ item.product.name }}</strong></p>                            
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
                         </div>
                         <div class="col-3 text-right">
@@ -143,7 +142,7 @@
     <div id="loading-overlay">
         <h1 class="text-light loading-spinner">
             <span class="icon">
-                <i class="fas fa-3x fad fa-spinner-third fa-spin"></i>                
+                <i class="fas fa-3x fas fa-spinner fa-spin"></i>                      
             </span>
         </h1>
     </div> 

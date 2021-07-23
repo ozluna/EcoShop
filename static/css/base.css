@@ -346,6 +346,7 @@ color: #17a2b8; /* text-info */
  /* .float-md-start img{
     max-width: 21rem;
   }*/
+ 
   .skincare{
     margin-left: 1.5rem;
   }
@@ -356,6 +357,10 @@ color: #17a2b8; /* text-info */
   }
   .update-link, .remove-item{
     font-size: smaller;
+  }
+  /*coupon card visual fix */
+  .code-text{
+    width:70%;
   }
 }
 /* fixed top navbar only on medium and up */
@@ -397,14 +402,15 @@ color: #17a2b8; /* text-info */
 .coupon-btn{
   font-size: x-small;
 }
-.code-text{
-  width:70%;
-}
-}
 
-@media (max-width:768) {  
- .code-text{
-  width:85% !important;
- }
-  
+
+@media (max-width:768px) {  
+  .code-text{
+    width:85% !important;
+   }
+  .cart-mob{
+     margin-top: 2rem !important;
+    }
+  }
+ 
 }
