@@ -65,10 +65,10 @@ def remove_cart(request, item_id):
     # Remove the items from cart
     try:
         product = get_object_or_404(Product,pk=item_id)
-        cart = request.session.get('cart', {})
+        cart = request.session.get('cart', {})        
         cart.pop(item_id)
-        request.session['cart'] = cart
-        messages.success(request, f'{cart[item_id]} sucessfully removed')
+        messages.success(request, f'{product.name} sucessfully removed')
+        request.session['cart'] = cart        
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request,f'Error removing the item {e}')
@@ -80,7 +80,6 @@ def view_cart(request):
 
     context ={
         'coupon_form': coupon_form,
-
         }
     return render(request, 'cart/cart.html', context)
 
