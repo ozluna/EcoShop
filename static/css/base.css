@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@1,900&family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@1,900&family=PT+Serif&display=swap');
 html {
     height:100%;
 }
@@ -6,7 +6,7 @@ html {
 body{
    
     color: #43250F;
-    font-family: 'Poppins';
+    font-family: 'Lato';
     
 }
 .second_color{
@@ -67,7 +67,7 @@ body{
   border-color: #e29578;
   border-width: 1px;
   border-style: solid;
-  font-family: "Poppins";
+  font-family: "Lato";
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 1px;
@@ -341,6 +341,33 @@ color: #17a2b8; /* text-info */
   .container {
     max-width: 80%;
   }
+  .fixed-top-desktop-only {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+  .header-container {
+    padding-top: 164px;
+  }
+}
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) and (max-width:1200px) {
+  .fixed-top-desktop-only {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1030;
+  }
+
+  .header-container {
+      padding-top: 164px;
+  }
+  .code-text{
+    width:70%;
+  }
 }
 @media (max-width: 991px) and (min-width: 768px) {
  /* .float-md-start img{
@@ -358,35 +385,14 @@ color: #17a2b8; /* text-info */
   .update-link, .remove-item{
     font-size: smaller;
   }
-  /*coupon card visual fix */
-  .code-text{
-    width:70%;
-  }
-}
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 164px;
-    }
-    
-}
-@media(max-width:991px){
-.motto {
+  .motto {
     font-size: 2rem;
 }
 .heading-title{
   margin-top: 2.5rem;
 }
 .navbar-toggler {
-   padding: .6rem .6rem;
+  padding: .6rem .6rem;
     font-size: 1rem;
 }
 .breadcrumb{
@@ -400,8 +406,15 @@ color: #17a2b8; /* text-info */
   font-size: 1rem;
 }
 .coupon-btn{
-  font-size: x-small;
+font-size: x-small;
 }
+/*coupon card visual fix */
+.code-text{
+width:65%;
+}
+ 
+}
+
 
 
 @media (max-width:768px) {  
@@ -411,6 +424,4 @@ color: #17a2b8; /* text-info */
   .cart-mob{
      margin-top: 2rem !important;
     }
-  }
- 
 }
