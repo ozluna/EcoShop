@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@1,900&family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=PT+Serif:wght@400&display=swap');
+
 html {
     height:100%;
 }
@@ -6,7 +7,8 @@ html {
 body{
    
     color: #43250F;
-    font-family: 'Lato';
+    font-family: 'PT+Serif', serif;
+    font-weight: bold;
     
 }
 .second_color{
@@ -15,6 +17,9 @@ body{
 .header-container{
   padding-bottom: 3em;
 }
+h1, h2, h3 { 
+  font-family:  'Lora', serif;
+  }
 
 /*dropdown items*/
 
@@ -55,7 +60,7 @@ body{
 .motto {     
 	max-width: 564px;
 	height: 84px;	
-	font-family: "PT+Serif";	
+	font-family:'PT+Serif', serif;	
 	line-height: 1;
 	text-align: center;
 }
@@ -424,4 +429,25 @@ width:65%;
   .cart-mob{
      margin-top: 2rem !important;
     }
+   
+  .increment-qty, .decrement-qty{
+    padding: 0.25rem;
+
+  }
+  .motto{
+    font-size:2rem;
+  }
+  .nav-link{
+    padding: 0.15rem;
+  }
+  .nav-link i.fa-lg{
+    font-size: 1rem;
+  }
+  .navbar-toggler {
+    padding: .5rem .5rem;
+    font-size: .75rem;
+  }
+  #delivery-banner h4{
+    font-size: .9rem;
+  }
 }

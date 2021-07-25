@@ -3,16 +3,16 @@
 
 {%block page_header %}
     <div class="container header-container">
-        <div class="row">
+        <div class="row m-0">
             <div class="col"></div>
         </div>
     </div>
 {%endblock%}
 {% block content %}    
 
-<div class="hero-img">    
+<div class="hero-img w-100">    
     <div class="container">
-                <h2 class="motto mx-auto logo-font">
+                <h2 class="motto mx-auto ">
                     Your One Stop Plastic Free, Zero Waste Online Shop                        
                 </h2>
                 <div class=" my-5 text-center">
@@ -110,35 +110,17 @@
     </div>
 </div>
 <div>
-    <!-- The Modal -->
-    <div class="modal fade" id="discountmodal">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">            
-            <!-- Modal Header -->
-            <div class="modal-header">               
-                <button type="button" class="close" data-dismiss="modal"><span style="color:#006D77 ;"><i class=" far fa-window-close"></i></span></button>
-            </div>            
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="modal-img">
-                <img style="width: 100%;" src="{{ MEDIA_URL }}DISCOUNT20.png" alt="DISCOUNT20">                    
-                </div>                
-            </div>        
-        </div>
-    </div>      
-</div>
+    {% include "home/modal.html"%}
 {% endblock %}
 {% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
        $(window).on('load',delayShow);
     function delayShow(){ setTimeout(() => {
-        $('#discountmodal').modal('show');
-        console.log("modal function works");
+        $('#discountmodal').modal('show');        
     }, 3000);}
     /// clear out the delayshow if it is called once(after it called once)
-    document.addEventListener("DOMContentLoaded", function(event) {
-        console.log("Hello! I am loaded");
+    document.addEventListener("DOMContentLoaded", function(event) {        
         });    
     </script>
 {%endblock%}
