@@ -18,10 +18,8 @@ The plastic waste is a big problem for our world and it is one of the biggest fa
 
 
 
-
 ## **User Experience**
 ***
-
 
 ## Goals
 ---
@@ -42,7 +40,7 @@ As a user I would like
 * to be able to easily register for an account.
 * to be able to view my order history.
 * to be able to recover my password if I forget it.
-* to recieve an email after registering
+* to receive an email after registering
 * to be able to leave product reviews.
 * to be able to search product with keywords.
 * to be able to sort the products by categories ore price for efficient search.
@@ -73,21 +71,20 @@ I tried to create a overall user friendly design with EcoShop website. I wanted 
 
 ### **Styling**
 * The brand logo is important as it welcomes the customer when they land in to the website. I created the logo to represent nature and elegance using Canva website. 
-* All buttons on the site fit the same bootstrap button styling in size and shape, but I added the colours I used in this project to them so they fit in with the rest of the content.
-* Material Design for bootstrab `MDB` Card design used on Products page included _Add Cart_.The card shows image and price of the product.
-
+* All buttons on the site fit the same bootstrap button styling in size and shape, but I added the colours I used in this project to them, so they fit in with the rest of the content.
+* Material Design for bootstrab `MDB` Card design used on Products page included _Add To Cart_. The card shows image and price of the product.
 
 ## **Features**
 ---
 ### **Element on every page**
 
 * **Top Header**
-    * On the left of the header you can see the brand logo
-    ![(media/EcoShopLogo.png)](media/EcoShopLogo.png)
+    * On the left of the header you can see the brand logo    
+    ![(media/EcoShopLogo.png)](media/EcoShopLogo.png)   
     * Links for the users and search bar on the middle range and the _All Product_ which is a dropdown take you to product page andsort the products in range such as `By Price`, `By Category`. _Categories_ such as `Kitchen`. 
     * The navbar is collapsed into a burger icon on small and medium sized screens and the logo disappears there fore _Home_ button appears on the dropdown menu
     * Search box function allows the visitors to search the products on online shop with keywords. The keywords are searched over name and description field of Product Model. it collapses to magnified icon on small and medium sized screens.
-    * On the right corner there is user icon it is a dropdown button gives `Register` and `Login` options if the user is logged in `My Profile` and `Logout`. If the user is superuser `Product Management ` option will also appear.
+    * On the right corner there is user icon it is a dropdown button gives `Register` and `Login` options. If the user is logged in `My Profile` and `Logout`. If the user is superuser `Product Management ` option will also appear.
 
 * **Footer**
   * Logo which is link to the home page
@@ -95,22 +92,58 @@ I tried to create a overall user friendly design with EcoShop website. I wanted 
   * Copyright information.
   * Social media links they are not linked at the moment but I will add them once the EcoShop social media platforms are exist.
 
+* **Toasts**
+  * Bootstrap toast feature is used to inform the user. There are 4 types of notification user can see `success`, `error`, `info` and `warning` each one of them has different colour and heading with different messages.
 
-### **Existing Features**
+## **Existing Features**
 ### **Home Page**
 The homepage is the most visited place in the webstore. It’s the page from where the customers start exploring the storefront. I want to excite the customers with my homepage content by highlighting my best-selling product, special offer and new items.
-To fulfil that purpose I added 20% discount modal, new arrival row and popular categories row.  
+To fulfil that purpose, I added 20% discount modal, new arrival row and popular categories row.  
 * A modal pops up in 3 second, gives enough time to the user a glimpse of the page before the modal pops in.
 * Homepage welcomes the user with free delivery treshold banner and navigation bar.
-* Hero image choosed from [canva](canva.com) There is a motto emphases "why you should shop on this website" and a `Shop Now` button completes the image.
-* New arrival row I added a line of codeto `home` app `views.py`  which calls last added 4 items to the website.
-* About us section intraduce the site to the visitor 
+* Hero image choosed from [canva](canva.com) There is a motto emphasis "why you should shop on this website" and a `Shop Now` button completes the image.
+* New arrival row I added a line of code to the `home` app `views.py` which calls last added 4 items to the website.
+* About us section introduce the site to the visitor 
 * Popular categories is inprogress part of the page. It is static at the moment but in future will call the most clicked categories to the home page.
 ### **Product Page**
- You can come to this page either `Shop Now` button on the home page or `All Products` link from the navigation bar. Also you can see categorised version  
+ You can come to this page either `Shop Now` button on the home page or `All Products` link from the navigation bar. Also, you can see categorised version.
+ * As you land to the product page you can see how many products exist in this webstore on the left corner. On the right corner you can sort all the products by `price`, `name` and `category`
+ * Each product is in a `MDB` card feature which has an image the product name and Add to cart button. If you are a `superuser` you can also `add` or `delete` a product from this page.
+ * A floating button appears on the lower right of the screen when the user starts to scroll downwards. Clicking this moves the view back up to the top of the page. This added because as products populates only one page, the page can be quite long, and this gives option to go to top without scrolling manually. I influenced the scroll top button from [W3S](w3school.com)
+ ### **Product Detail Page**
+ * From the products page user can click to any product to see the details of it and choose quantity then `Add To Cart`.
+ * Authenticated user, can leave a comment, and rate the product. If the user is not signed in, they can see the reviews and count of them but can't see the "review form" instead they are encouraging to login to leave a review.
+ * If the user leaves a review this will appear with user name and user icon on the left, given rate will fill the stars and it will position next to username. On the next column user can see review headline and review subject. Every review will be divided by `hr` horizantal line.
+ * Superuser if authenticated can edit and/or delete the product using `edit` and `delete` buttons which are located next to product rating.
 
+### **Shopping Cart**
+* If there is no item in the shopping cart user can see "Your cart is empty" message and `Keep Shopping` button which will take user to products page.
+* If the cart has a product on the left side, it shows the products added to the cart. Customers can change the quantity or remove the products in here.
+* On the bottom left of the page customer can use a discount coupon code, right now  `DISCOUNT20` will give 20% off of the cart total (delivery is not included to the discount, it will be calculated from the full price).
+* On the bottom right, you can see the order summary that shows Cart Total, Delivery and Grand Total. If there is discount coupon applied customer see the before and after the discount. 
+* When the customer happy with their cart `Secure Checkout` button take them to the checkout page.
+
+### **Checkout page**
+* On the checkout page, customers are asked to fill in delivery details. The customer can complete the checkout process without having an account, if the customer hasn't logged in, the message "Create an account or login to save this information" is shown just before the card details.
+* On the right, the customer can see order summary and Order Total, Delivery and Discount (if there is any discount code applied)
+* Once the customer filled up their details, they can `Complete Order` finilaze the purchase.
+
+### **Checkout Success Page**
+* A thank you message will be displayed after the checkout process and the table that holds the order details.
+* Keep Shopping button is placed at the end of the page, and if the user has been logged into their account, Back to Profile will be shown.
+### **My Profile Page**
+* My Profile page is available for authenticated users and will be shown in the My Account Dropdown menu at the navbar which appears when user log into their account.
+* In Profile Page, authenticated users can `Edit` Delivery Information and see Order History.
+
+### **Product Management for Superuser**
+* It is limited to authenticated superusers to see the admin page admin can:
+  * add products,
+  * edit products, 
+  * delete products.
+* If non-logged in users try to access the url directly, it will redirect to the sign in page. If a non-superuser tries to access the url, an error message pops up which says that only a superuser can access this page.
 
 ### **Features Left to Implement**
+There are some of features left to implement in the future which I could not add to the project this time due to time constraints. These features are great to be added for a more complete online shop service which would lead to higher customer satisfaction.
 
 
 
