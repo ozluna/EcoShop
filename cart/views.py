@@ -84,9 +84,9 @@ def view_cart(request):
     return render(request, 'cart/cart.html', context)
 
 
-def add_coupon(request):        
+def add_coupon(request):
     coupon_form_data = {'code':request.POST['code']}
-    coupon_form = CouponForm(coupon_form_data) 
+    coupon_form = CouponForm(coupon_form_data)
     print(coupon_form)
     # check if the form is valid
     if coupon_form.is_valid:

@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora&family=PT+Serif:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=PT+Serif:wght@300&display=swap');
 
 html {
     height:100%;
 }
 
 body{
-   
+    width:fit-content;
     color: #43250F;
     font-family: 'PT+Serif', serif;
-    font-weight: bold;
-    
+       
 }
 .second_color{
   color:#006D77 !important;
@@ -77,7 +76,7 @@ h1, h2, h3 {
   font-size: 18px;
   letter-spacing: 1px;
   text-align: center;
-  min-width: 16.25rem;
+  width: 16.25rem;
 }
 
 .btn{
@@ -139,7 +138,7 @@ h1, h2, h3 {
 /*home page featured products*/
 .new-arrival{
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.75);
-    max-width: 207px;
+    width:100%;
    
 }
 /* About us*/
@@ -450,4 +449,21 @@ width:65%;
   #delivery-banner h4{
     font-size: .9rem;
   }
+  /* shop now button needs to be smaller*/
+  .shop-now-button{
+    width:100% !important;
+  }
+  
+element.style {
+}
+.modal-backdrop.show {
+    opacity: .5;
+}
+.modal-backdrop.fade {
+    opacity: 0;
+}
+.modal-backdrop {
+  width:100%;
+  height:100%;
+}
 }

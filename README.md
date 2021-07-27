@@ -15,6 +15,8 @@ The plastic waste is a big problem for our world and it is one of the biggest fa
 2. [Features](#features)
     - [Existing Features](#existing-features)
     - [Features Left to Implement](#features-left-to-implement)
+3. [Wireframes](#wireframes)
+4. [Data Modeling](#data-modeling)
 
 
 
@@ -57,8 +59,6 @@ As a owner I would like
 ---
 I tried to create a overall user friendly design with EcoShop website. I wanted to encoruge the user to shop with confidence with that in mind I attempt to use a common ecommerce website structure.
 
-### **Wireframes**
-* Wireframes were created using balsamiq.you can find them [here](./readme-doc/wireframe)
 
 ### **Fonts**
 * For the primary font I used GoogleFonts PT+Serif as a main font and Lora for headings I thought it would fit with the website. 
@@ -142,9 +142,41 @@ To fulfil that purpose, I added 20% discount modal, new arrival row and popular 
   * delete products.
 * If non-logged in users try to access the url directly, it will redirect to the sign in page. If a non-superuser tries to access the url, an error message pops up which says that only a superuser can access this page.
 
-### **Features Left to Implement**
+## **Features Left to Implement**
+---
 There are some of features left to implement in the future which I could not add to the project this time due to time constraints. These features are great to be added for a more complete online shop service which would lead to higher customer satisfaction.
+1. **Home page modal pop up**: I would like to limit the modal popping only once than everytime user refresh/visits the home page. It is more annoying then attrackting if the user needs to keep click close button.
+2. **Popular categories**: I would like to add a functionality to the this section which will be shown categories the most clicked or added to the cart.
+3. **Product page cart**: User can only add one product at a time from the product page. I am planing to add a modal will pop up a screen with a quantity option. Also, I would like to show user ratings here so customer can see and can sort the products by their ratings.
+4. **Reviews**: Right now one user can add as many reviews as they want on any products this can lead a biased opinion. I would like to limit this to a one and whether the user purchased the product they commenting. Also, I would like to user able to add image when they use this product. This will encourage other users to buy the same product.
+5. **Social Account Login**: I would like to users be able to sign up / log into their account of the site, using an existing third party account such as Facebook and Twitter. This is beneficial to users and the site owners. For users, it's hassle free for remembering a password for the site and it gives the users a smooth registration process. For the site owners, there are many benefits gained by social login - such as increasing user sign ups, reducing bounce rate and gaining a user's social account details which is beneficial for marketing purpose.
+6. **Coupon code**: It would be useful if the admin can set time and or put conditions to the codes such as "first purchase". In future I will add this option to the admin section.
+7. **News Letter**: News letter is one of the best way advertise your products and inform customers about discounts so they will more often visit your shop this will rise of their purchase rate.
+# **Wireframes**
+These wireframes were created using Balsamiq during the Scope Plane part of the design and planning process for this project.  
+* [Home Page](readme-doc/Home-Page.png) 
+  * [Mobile Version](readme-doc/Mobile-home.png)
+* [Products Page](readme-doc/Product.png)
+  * [Mobile Version](readme-doc/Mobile-Product.png)
+* [Product Detail Page](readme-doc/Product-details.png)
+  * [Mobile Version](readme-doc/Mobile-product_details.png)
+* [Cart Page](readme-doc/Cart.png)
+    * [Mobile Version](readme-doc/Mobile-Shopping-Cart.png)
+* [Checkout Page](readme-doc/Checkout.png)
+  * [Mobile Version](readme-doc/Mobile-Checkout.png.png)
+* [Register Page](readme-doc/Register-page.png)
+  * [Mobile Version](readme-doc/Mobile-Registerpage.png)
+* [My Profile Page](readme-doc/My-Profile.png)
+  * [Mobile Version](readme-doc/Mobile-My-Profile.png)
 
+# **Data Modeling**
+* As database development phase SQLight was used which is installed with Django.
+
+* Deployment phase PostgreSQL was used on deployment stage, which is provided as add-on by Heroku application.
+* Following is Entity Relationship Diagram of this project. This diagram created on [Moqup Webapp](https://app.moqups.com)  
+![(readme-doc/DataModeling.png)](readme-doc/DataModeling.png)
+
+### **Product App**
 
 
 ## **Technologies Used**
