@@ -213,7 +213,6 @@ Order Model - This is populated when user completes the checkout. The details en
 # **Deployment**
 
 ## To run this project locally
----
 
 In order to run this project locally, you will need to install the following:
 * An IDE, such as VS Code
@@ -268,7 +267,7 @@ Once you Locally deployed this project you can follow this steps.
 * Commit changes to Git `git add .`  `git commit -m " with a comment"`
 * Set the environment variables in Heroku Settings > Reveal Config Variables The following Variables must be set:
 | KEY                  | VALUE                              | 
-| -------------        |:----------------------------------:|
+| -------------------- |:----------------------------------:|
 | USE_AWS              | TRUE                               | 
 | AWS_ACCESS_KEY_ID    | YOUR_ACESS_KEY                     |  
 | AWS_SECRET_ACCESS_KEY| YOUR_SECRET_ACCESS_KEY             | 
