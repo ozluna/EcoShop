@@ -435,10 +435,7 @@ input[name="q"]::placeholder {
   #delivery-banner h4 {
     font-size: 0.9rem;
   }
-  /* shop now button needs to be smaller*/
-  .shop-now-button {
-    width: 100% !important;
-  }
+    
   .modal-backdrop.show {
     opacity: 0.5;
   }
