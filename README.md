@@ -205,45 +205,8 @@ Order Model - This is populated when user completes the checkout. The details en
 * [AWS S3 Bucket](https://aws.amazon.com)
 
 
-
-
-#### Event_categories  
-| Title         | 	Key in db	    |  Data type |  
-| ------------- |:-----------------:|-----------:|
-| event_id      |      _id          |ObjectId    | 
-| event_name    | Event name        |String      | 
-| event_picture | path to the image |String      |
-
-#### Events
-
-| Title             | Key in bd         | Data     |
-| -------------     |:-----------------:| --------:|
-| event_id          | _id               | ObjectId |
-| organiser_name    | Name              |   String |
-| event_description | Event description |   String |
-| event_date        | Event date        | String   |
-| guests            | attenders details | Array    |
 ## [**Testing**](Testing.md)
-[W3C HTML Validator](https://validator.w3.org/).  
 
-
- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
-
-[JSHint](https://jshint.com/) 
-I tested Python code with PEP8 using it as follow:
-
-The autopep8 extension was installed in the workspace.
-
-To install this enter this in the terminal:
-`pip3 install --upgrade autopep8`
-In order for autopep8 to run, pycodestyle is also required. To instlal pycodestyle, enter this command into the terminal:
-
-`pip3 install pycodestyle`
-Once these steps are complete, you can format the code into PEP8 formatting by entering this command into the terminal:
-
-`autopep8 --in-place --aggressive --aggressive app.py`
-
-I have recieved no error in the end of testing
 
 ## Bugs
 
