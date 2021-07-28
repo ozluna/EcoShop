@@ -1,7 +1,11 @@
-[W3C HTML Validator](https://validator.w3.org/).  
+# **Testing**
+
+## **Automated Testing**
+[W3C HTML Validator](https://validator.w3.org/) used to validate the html codes (I ignored the error cused by jinja).  
 
 
- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+ [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)  
+ [CSS Beautifier](https://codebeautify.org/css-beautify-minify)
 
 [JSHint](https://jshint.com/) 
 I tested Python code with PEP8 using it as follow:

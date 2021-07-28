@@ -17,7 +17,15 @@ The plastic waste is a big problem for our world and it is one of the biggest fa
     - [Features Left to Implement](#features-left-to-implement)
 3. [Wireframes](#wireframes)
 4. [Data Modeling](#data-modeling)
-
+5. [Technologies Used](#technologies-used)
+    - [Frontend Technologies](#front-end-technologies)
+    - [Backend Technologies](#back-end-technologies)
+6. [Testing](#testing)
+7. [Deployment](#deployment)
+    - [Local Deployment](#to-run-this-project-locally)
+    - [Remote deployment](#remote-deployment)
+8. [Credits](#credits)
+9. [Acknowledgements](#acknowledgements)
 
 
 ## **User Experience**
@@ -205,8 +213,8 @@ Order Model - This is populated when user completes the checkout. The details en
 * [AWS S3 Bucket](https://aws.amazon.com)
 
 
-## [**Testing**](Testing.md)
-
+## **Testing**
+Testing information can be found here [Testing.md](Testing.md)
 
 ## Bugs
 
@@ -255,7 +263,7 @@ Once this is done:
 * You can access the django admin view by adding ~/admin to the end of your (local) URL.
 
 ## Remote Deployment
----
+
 Once you Locally deployed this project you can follow this steps.
 * First of all you will need to have a heroku account and name your app.
 * Create requirements.txt from your project with the help of pip3 freeze --local > requirements.txt 
