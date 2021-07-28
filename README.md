@@ -265,19 +265,20 @@ Once you Locally deployed this project you can follow this steps.
 ````
 * Then from you environment remotely connect to this heroku account by typing `heroku login -i`
 * Commit changes to Git `git add .`  `git commit -m " with a comment"`
-* Set the environment variables in Heroku Settings > Reveal Config Variables The following Variables must be set:
-| KEY                  | VALUE                              | 
-| -------------------- |:----------------------------------:|
-| USE_AWS              | TRUE                               | 
-| AWS_ACCESS_KEY_ID    | YOUR_ACESS_KEY                     |  
-| AWS_SECRET_ACCESS_KEY| YOUR_SECRET_ACCESS_KEY             | 
-| DATABASE_URL         | YOUR_DB_URL                        |  |DEVELOPMENT           | TRUE                               |
+* Set the environment variables in Heroku Settings > Reveal Config Variables The following Variables must be set:  
+
+| KEY                  | VALUE                              |
+| :---                 |    :----:                          |
+| USE_AWS              | TRUE                               |
+|DEVELOPMENT           | TRUE                               |
+| AWS_ACCESS_KEY_ID    | YOUR_ACESS_KEY                     |
+| AWS_SECRET_ACCESS_KEY| YOUR_SECRET_ACCESS_KEY             |
+| DATABASE_URL         | YOUR_DB_URL                        |
 |STRIPE_PUBLIC_KEY     | YOUR_STRIPE_PUBLIC_KEY             |
 |STRIPE_SECRET_KEY     | YOUR_STRIPE_SECRET_KEY             |
 |STRIPE_WH_SECRET      | YOUR_STRIPE_WH_SECRET              |
 |EMAIL_HOST_PASS       | YOUR_EMAIL_HOST_PASS               |
 |EMAIL_HOST_USER       | YOUR_EMAIL_HOST_USER               |
-
 
 * Comment out the current database setting in settings.py, and add the code below instead. This is done temporarily to migrate the datbase on Heroku.
 * Import the provided fixtures in the following order  
