@@ -143,7 +143,7 @@ To fulfil that purpose, I added 20% discount modal, new arrival row and popular 
 * If non-logged in users try to access the url directly, it will redirect to the sign in page. If a non-superuser tries to access the url, an error message pops up which says that only a superuser can access this page.
 
 ## **Features Left to Implement**
----
+
 There are some of features left to implement in the future which I could not add to the project this time due to time constraints. These features are great to be added for a more complete online shop service which would lead to higher customer satisfaction.
 1. **Home page modal pop up**: I would like to limit the modal popping only once than everytime user refresh/visits the home page. It is more annoying then attrackting if the user needs to keep click close button.
 2. **Popular categories**: I would like to add a functionality to the this section which will be shown categories the most clicked or added to the cart.
@@ -176,55 +176,36 @@ These wireframes were created using Balsamiq during the Scope Plane part of the 
 * Following is Entity Relationship Diagram of this project. This diagram created on [Moqup Webapp](https://app.moqups.com)  
 ![(readme-doc/DataModeling.png)](readme-doc/DataModeling.png)
 
-### **Product App**
+### **Product**
+Each product has `sku`, `name`, `description`, `price` and `image` field eache product can be categorised as `kitchen`, `bathroom`, `on-the-go` and `skin-care`. The search option will only work for products and it is not limited only product name user can only search a word in description.
+### **Order**
+Order Model - This is populated when user completes the checkout. The details entered in the checkout will populate this model as well as custom calculations for `total amount` and `discount` and `delivery charge` also collects the delivery information, `stripe_pid` and `order` information. All the fields except `user_profile` field have `null=false`. The reason why user_profile does not have null=false is that guest customers (not authenticated users) can also purchase products and complete the checkout process without creating an account. Order model is connected to OrderLineItem model which collects information.
 
 
 ## **Technologies Used**
-
+### **Front-End Technologies**
   * HTML
-
-
   * CSS
-
-
-  * Javascript 
-
-
-  * JQuery  Used for some of the main javascript functionality.
-
- 
-
+  * Javascript
+  * JQuery
   * [Bootstrap](https://getbootstrap.com/)
-
-
-  * [Google Fonts](https://fonts.google.com/) *Lato*, *Oswald*, *Monoton*
-
-
-  
-  * [Fontawsome](https://fontawesome.com/) for the event categories icon.
-
-
-  * [Materializecss](https://materializecss.com/) for the designing the card and footer.
-
-  
+  * [Google Fonts](https://fonts.google.com/) 
+  * [Fontawsome](https://fontawesome.com/)    
 ### **Back-End Technologies**
-* Flask - Used as the microframework.
-* Jinja - template to simplify displaying data from the backend of this project smoothly and effectively in html.
-* Heroku - Used to host the application
-* Python - The back-end programming language.
-* Pymongo - Used to connect the python with the database.
-* MongoDB Atlas - Used to store the database.
-* PIP - for installation of tools needed in this project.
+* [Django](https://www.djangoproject.com)  
+* [Django Crispy Form](https://django-crispy-forms.readthedocs.io/en/latest/)
+* [Django allauth](https://django-allauth.readthedocs.io/en/latest/)
+* [Gitpod](http://gitpod.io/)
+* [Github](https://github.com/ozluna/EcoShop)
+* [Jinja](https://jinja2docs.readthedocs.io/en/stable/)
+* [Stripe](https://stripe.com/ie) 
+* [Heroku](https://id.heroku.com/login)
+* [Python](https://www.python.org/)
+* [PIP](https://pip.pypa.io/en/stable/installation/)
+* [AWS S3 Bucket](https://aws.amazon.com)
 
 
-### **Database Schema**
-The application uses MongoDB for data storage. MongoDB was chosen as the database to use due to the unstructured format of the data that will be stored within it.  
-The data stored in the database are the following:
 
-* Object  
-* String  
-* Array  
-### **Data structure**  
 
 #### Event_categories  
 | Title         | 	Key in db	    |  Data type |  
@@ -242,7 +223,7 @@ The data stored in the database are the following:
 | event_description | Event description |   String |
 | event_date        | Event date        | String   |
 | guests            | attenders details | Array    |
-## **Testing**
+## [**Testing**](Testing.md)
 [W3C HTML Validator](https://validator.w3.org/).  
 
 
@@ -266,53 +247,135 @@ I have recieved no error in the end of testing
 
 ## Bugs
 
-## **Deployment**
-#### To run this project locally
+# **Deployment**
+
+## To run this project locally
+---
 
 In order to run this project locally, you will need to install the following:
+* An IDE, such as VS Code
+* PIP3 to install the app requirements.
+* Python3 to run the application
+* GIT for version control  
+Once this is done:   
+* Navigate to Mainpage of the repository
+* Click on "Code" button
+* Choose "Clone with HTTPs" & copy URL
+* Open Terminal
+* Change the current working directory to prefered location
+* Type git clone and past copied URL git clone `git@github.com:ozluna/EcoShop.git`
+* Press Enter to create local Clone - Make sure your environment supports `python3` -
+* On Terminal type `pip3 install -r requirements.txt`
+* Setup the environment variables. This process is differnet depending on the used IDE. Gitpod supports global Environments for the development process. Therefore they were stored in the settings. The following variables are needed
 
-An IDE, such as VS Code
-PIP to install the app requirements.
-Python3 to run the application
-GIT for version control
-MongoDB to develop the database.
-Once this is done, you will need to download the .ZIP file of the repository, unzip this file and then in the CLI with GIT installed, enter the following command:
+```
+    DEVELOPMENT=True   
+    SECRET_KEY = <YOUR SECRET KEY>
+    STRIPE_PUBLIC_KEY = <YOUR STRIPE_PUBLIC_KEY>
+    STRIPE_SECRET_KEY = <YOUR STRIPE_SECRET_KEY>
+    STRIPE_WH_SECRET = <YOUR STRIPE_WH_SECRET>
+```  
+> I used this website to generate secret key [Key generator](https://miniwebtool.com/django-secret-key-generator/)
 
-`https://github.com/ozluna/meet-eco.git` 
-Navigate to the to path using the cd command.
+* Import the provided fixtures in the following order  
+`python3 manage.py loaddata categories`  
+`python3 manage.py loaddata products`
 
-Create a .env file with your credentials. Be sure to include your MONGO_URI and SECRET_KEY values.
+* Migrate the models and create the database by typing the following commands into the terminal:  
+`python3 manage.py makemigrations`  
+`python3 manage.py migrate`  
 
-Install all requirements from the requirements.txt file using the following command:
-
-  `sudo -H pip3 -r requirements.txt`
-
-
-You should then be able to launch your app using the following command in your terminal:
-
-  `python app.py`
+* Create a superuser for accessing the django admin view with the following command:  
+`python3 manage.py createsuperuser`  
+* You will need to use an email address, username and password.
+* You should be all set and when using the command  
+ `python3 manage.py runserver` it will pop up open browser screen.
+* You can access the django admin view by adding ~/admin to the end of your (local) URL.
 
 ## Remote Deployment
-* Create a `requirements.txt` file using the terminal command  `pip3 freeze --local > requirements.txt` .
-* Create a Procfile with the terminal command `echo web: python app.py > Procfile`.
-* `git add` and `git commit` the new requirements and Procfile and then `git push` the project to GitHub.
-* Head over to Heroku
-* Click the "new" button, give the project a name & set the region to Europe.
-* From the Heroku dashboard of your newly created application, click on `"Deploy" > "Deployment method"` and select GitHub.
-* Confirm the linking of the Heroku app to the correct GitHub repository.
-* In the Heroku dashboard for the application, click on "Settings" > "Reveal Config Vars".
-* Set the following config vars:
+---
+Once you Locally deployed this project you can follow this steps.
+* First of all you will need to have a heroku account and name your app.
+* Create requirements.txt from your project with the help of pip3 freeze --local > requirements.txt 
+* Create a Procfile and type following:
+```
+ echo web: gunicorn EcoShop.wsgi:application
+````
+* Then from you environment remotely connect to this heroku account by typing `heroku login -i`
+* Commit changes to Git `git add .`  `git commit -m " with a comment"`
+* Set the environment variables in Heroku Settings > Reveal Config Variables The following Variables must be set:
+| KEY                  | VALUE                              | 
+| -------------        |:----------------------------------:|
+| USE_AWS              | TRUE                               | 
+| AWS_ACCESS_KEY_ID    | YOUR_ACESS_KEY                     |  
+| AWS_SECRET_ACCESS_KEY| YOUR_SECRET_ACCESS_KEY             | 
+| DATABASE_URL         | YOUR_DB_URL                        |  |DEVELOPMENT           | TRUE                               |
+|STRIPE_PUBLIC_KEY     | YOUR_STRIPE_PUBLIC_KEY             |
+|STRIPE_SECRET_KEY     | YOUR_STRIPE_SECRET_KEY             |
+|STRIPE_WH_SECRET      | YOUR_STRIPE_WH_SECRET              |
+|EMAIL_HOST_PASS       | YOUR_EMAIL_HOST_PASS               |
+|EMAIL_HOST_USER       | YOUR_EMAIL_HOST_USER               |
 
-| KEY           | VALUE                              | 
-| ------------- |:----------------------------------:|
-| IP            | 0.0.0.0                            | 
-| PORT          | 5000                               |  
-| MONGODBNAME   | <database_name>                    | 
-| MONGO_URI     |mongodb+srv://:@<cluster_name> -qtxun.mongodb.net/<database_name> ?retryWrites=true&w=majority |              
-| SECRET KEY    | `<your_secret_key>`                 |
 
-* In the Heroku dashboard, click "Deploy".
-* Your application should now be deployed.
+* Comment out the current database setting in settings.py, and add the code below instead. This is done temporarily to migrate the datbase on Heroku.
+* Import the provided fixtures in the following order  
+`python3 manage.py loaddata categories`  
+`python3 manage.py loaddata products`
+
+* Migrate the models and create the database by typing the following commands into the terminal:  
+`python3 manage.py makemigrations`  
+`python3 manage.py migrate`  
+
+* Create a superuser for accessing the django admin view with the following command:  
+`python3 manage.py createsuperuser`  
+* Replace the database setting with the code below, so that the right database is used depending on development/deployed environment.
+```
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
+        }
+    }
+```
+* Disable collect static, so that Heroku won't try to collect static file with: `heroku config:set DISABLE_COLLECTSTATIC=1`
+* Add `ALLOWED_HOSTS = ['ecoshop-oz.herokuapp.com', 'localhost']`
+* In Stripe, add Heroku app URL a new webhook endpoint.
+* Update the settings.py with the new Stripe environment variables and email settings.
+* Commit all the changes to Heroku. Medial files are not connected to the app yet but the app should be working on Heroku.
+* From now on if you make any changes on your models you should run this code to migrate to heroku `heroku run python3 manage.py migrate`
+
+* We used AWS for holding static and media files to work this Amazon web services bucket configuration  
+* Install `boto3` and django-storages with a command `pip3 install boto3` and `pip3 install django-storages` in your terminal, to connect AWS S3 bucket to Django.
+* Add 'storages' to INSTALLED_APPS in settings.py. and add following code to your settings.py:
+```
+  # Bucket config
+if 'USE_AWS' in os.environ:
+    #Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+    AWS_STORAGE_BUCKET_NAME = 'ecoshop-oz'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media file
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILES_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
 ## **Credits**
 Product page card design and footer design from [MDB](https://mdbootstrap.com/)  
 Scroll top feature is from [W3](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)  
