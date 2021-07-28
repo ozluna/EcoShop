@@ -435,7 +435,9 @@ input[name="q"]::placeholder {
   #delivery-banner h4 {
     font-size: 0.9rem;
   }
-    
+  .card-footer{
+    width:100%;
+  }    
   .modal-backdrop.show {
     opacity: 0.5;
   }
