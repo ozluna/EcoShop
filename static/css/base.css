@@ -5,7 +5,6 @@ html {
 }
 
 body {
-  width: fit-content;
   color: #43250f;
   font-family: "PT+Serif", serif;
 }
@@ -442,7 +441,7 @@ input[name="q"]::placeholder {
     opacity: 0.5;
   }
   .modal-backdrop.fade {
-    opacity: 0;
+    opacity: 0.5;
   }
   .modal-backdrop {
     width: 100%;
