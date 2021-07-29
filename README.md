@@ -123,8 +123,8 @@ To fulfil that purpose, I added 20% discount modal, new arrival row and popular 
 ### **Product Page**
  You can come to this page either `Shop Now` button on the home page or `All Products` link from the navigation bar. Also, you can see categorised version.
  * As you land to the product page you can see how many products exist in this webstore on the left corner. On the right corner you can sort all the products by `price`, `name` and `category`
- * Each product is in a `MDB` card feature which has an image the product name and Add to cart button. If you are a `superuser` you can also `add` or `delete` a product from this page.
- ![(readme-doc/productcart.PNG)](readme-doc/productcart.PNG)
+ * Each product is in a `MDB` card feature which has an image the product name and Add to cart button. If you are a `superuser` you can also `add` or `delete` a product from this page.  
+ ![(readme-doc/productcart.PNG)](readme-doc/productcart.PNG)  
  * A floating button appears on the lower right of the screen when the user starts to scroll downwards. Clicking this moves the view back up to the top of the page. This added because as products populates only one page, the page can be quite long, and this gives option to go to top without scrolling manually. I influenced the scroll top button from [W3S](w3school.com)
  ### **Product Detail Page**
  * From the products page user can click to any product to see the details of it and choose quantity then `Add To Cart`.
