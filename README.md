@@ -371,7 +371,7 @@ For fonts I used [Google Fonts](https://fonts.google.com/)
 ## **Acknowledgements**
 
 In the process of finishing this website I used many resources, mainly; MDN web docs, W3Schools, Stack Overflow.  
-Youtube channels such as Travers media, online resources [goalkicker](https://goalkicker.com), code institute videos and last but not least my mentor and tutors help.
+Youtube channels, online resources , code institute videos and last but not least my mentor and tutors help.
 
 
 
