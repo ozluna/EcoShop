@@ -217,6 +217,7 @@ h3 {
   top: 0;
   left: 0;
   white-space: nowrap;
+  overflow: hidden;
   width: 0;
 }
 
@@ -243,7 +244,11 @@ input[name="q"]::placeholder {
 .toast-capper {
   height: 2px;
 }
-/* Allauth form formatting customise this*/
+/* cart page coupon code */
+.code-text {
+  width: 60%;
+}
+/* Allauth form formatting */
 
 .fit-the-profile {
   margin-top: 10rem;
@@ -356,15 +361,10 @@ input[name="q"]::placeholder {
   .header-container {
     padding-top: 164px;
   }
-  .code-text {
-    width: 70%;
-  }
+  
 }
 @media (max-width: 991px) and (min-width: 768px) {
-  /* .float-md-start img{
-    max-width: 21rem;
-  }*/
-
+  
   .skincare {
     margin-left: 1.5rem;
   }
@@ -400,15 +400,13 @@ input[name="q"]::placeholder {
   .coupon-btn {
     font-size: x-small;
   }
-  /*coupon card visual fix */
-  .code-text {
-    width: 65%;
-  }
+  
 }
 
 @media (max-width: 768px) {
-  .code-text {
-    width: 85% !important;
+  /*product cards design*/
+  h5.card-title{
+    font-size: medium;
   }
   .cart-mob {
     margin-top: 2rem !important;

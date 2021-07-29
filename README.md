@@ -89,8 +89,10 @@ I tried to create a overall user friendly design with EcoShop website. I wanted 
 * **Top Header**
     * On the left of the header you can see the brand logo    
     ![(media/EcoShopLogo.png)](media/EcoShopLogo.png)   
-    * Links for the users and search bar on the middle range and the _All Product_ which is a dropdown take you to product page andsort the products in range such as `By Price`, `By Category`. _Categories_ such as `Kitchen`. 
-    * The navbar is collapsed into a burger icon on small and medium sized screens and the logo disappears there fore _Home_ button appears on the dropdown menu
+    * Links for the users and search bar on the middle range and the _All Product_ which is a dropdown take you to product page andsort the products in range such as `By Price`, `By Category`. _Categories_ such as `Kitchen`.   
+    ![(readme-doc/allproducts.PNG](readme-doc/allproducts.PNG)
+    * The navbar is collapsed into a burger icon on small and medium sized screens and the logo disappears there fore _Home_ button appears on the dropdown menu  
+    ![(readme-doc/mobnav.PNG](readme-doc/mobnav.PNG)  
     * Search box function allows the visitors to search the products on online shop with keywords. The keywords are searched over name and description field of Product Model. it collapses to magnified icon on small and medium sized screens.
     * On the right corner there is user icon it is a dropdown button gives `Register` and `Login` options. If the user is logged in `My Profile` and `Logout`. If the user is superuser `Product Management ` option will also appear.
 
@@ -103,20 +105,26 @@ I tried to create a overall user friendly design with EcoShop website. I wanted 
 * **Toasts**
   * Bootstrap toast feature is used to inform the user. There are 4 types of notification user can see `success`, `error`, `info` and `warning` each one of them has different colour and heading with different messages.
 
+  ![(readme-doc/successmessage.PNG](readme-doc/successmessage.PNG)
+
 ## **Existing Features**
 ### **Home Page**
 The homepage is the most visited place in the webstore. It’s the page from where the customers start exploring the storefront. I want to excite the customers with my homepage content by highlighting my best-selling product, special offer and new items.
 To fulfil that purpose, I added 20% discount modal, new arrival row and popular categories row.  
 * A modal pops up in 3 second, gives enough time to the user a glimpse of the page before the modal pops in.
+![(readme-doc/modalpopup.PNG)](readme-doc/modalpopup.PNG)
 * Homepage welcomes the user with free delivery treshold banner and navigation bar.
 * Hero image choosed from [canva](canva.com) There is a motto emphasis "why you should shop on this website" and a `Shop Now` button completes the image.
+![(readme-doc/heroimagews.PNG)](readme-doc/heroimagews.PNG)
 * New arrival row I added a line of code to the `home` app `views.py` which calls last added 4 items to the website.
+![(readme-doc/newarrival.PNG)](readme-doc/newarrival.PNG)
 * About us section introduce the site to the visitor 
 * Popular categories is inprogress part of the page. It is static at the moment but in future will call the most clicked categories to the home page.
 ### **Product Page**
  You can come to this page either `Shop Now` button on the home page or `All Products` link from the navigation bar. Also, you can see categorised version.
  * As you land to the product page you can see how many products exist in this webstore on the left corner. On the right corner you can sort all the products by `price`, `name` and `category`
  * Each product is in a `MDB` card feature which has an image the product name and Add to cart button. If you are a `superuser` you can also `add` or `delete` a product from this page.
+ ![(readme-doc/productcart.PNG)](readme-doc/productcart.PNG)
  * A floating button appears on the lower right of the screen when the user starts to scroll downwards. Clicking this moves the view back up to the top of the page. This added because as products populates only one page, the page can be quite long, and this gives option to go to top without scrolling manually. I influenced the scroll top button from [W3S](w3school.com)
  ### **Product Detail Page**
  * From the products page user can click to any product to see the details of it and choose quantity then `Add To Cart`.
@@ -153,9 +161,11 @@ To fulfil that purpose, I added 20% discount modal, new arrival row and popular 
 ## **Features Left to Implement**
 
 There are some of features left to implement in the future which I could not add to the project this time due to time constraints. These features are great to be added for a more complete online shop service which would lead to higher customer satisfaction.
-1. **Home page modal pop up**: I would like to limit the modal popping only once than everytime user refresh/visits the home page. It is more annoying then attrackting if the user needs to keep click close button.
+1. **Home page modal pop up**: I would like to limit the modal popping only once than everytime user refresh/visits the home page. It is more annoying then attrackting if the user needs to keep click close button.   
+
 2. **Popular categories**: I would like to add a functionality to the this section which will be shown categories the most clicked or added to the cart.
-3. **Product page cart**: User can only add one product at a time from the product page. I am planing to add a modal will pop up a screen with a quantity option. Also, I would like to show user ratings here so customer can see and can sort the products by their ratings.
+3. **Product page Add to Cart**: User can only add one product at a time from the product page. I am planing to add a modal will pop up a screen with a quantity option. Also, I would like to show user ratings here so customer can see and can sort the products by their ratings.
+
 4. **Reviews**: Right now one user can add as many reviews as they want on any products this can lead a biased opinion. I would like to limit this to a one and whether the user purchased the product they commenting. Also, I would like to user able to add image when they use this product. This will encourage other users to buy the same product.
 5. **Social Account Login**: I would like to users be able to sign up / log into their account of the site, using an existing third party account such as Facebook and Twitter. This is beneficial to users and the site owners. For users, it's hassle free for remembering a password for the site and it gives the users a smooth registration process. For the site owners, there are many benefits gained by social login - such as increasing user sign ups, reducing bounce rate and gaining a user's social account details which is beneficial for marketing purpose.
 6. **Coupon code**: It would be useful if the admin can set time and or put conditions to the codes such as "first purchase". In future I will add this option to the admin section.
