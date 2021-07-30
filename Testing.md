@@ -100,7 +100,7 @@ As a user I would like to be able to
 ---
 **User Stories Tested**  
 As a user I would like to be able to:
-* Find that the delivery information is prefilled if logged-in in order to smoothly proceed with my purchase.
+
 * Automatically be suggested to log in if I did not log-in in order to smoothly proceed with my purchase.
 * Be informed when the purchase is over.
 
@@ -114,7 +114,6 @@ As a shop owner
     * Authentication required: `4000 0027 6000 3184`.
 
 ### Conclusion: 
-* The delivery information form is prefilled if logged in.
 * If not logged in, a message appears at the end of the form: _"Create an account or login to save this information"._
 * All the webhooks in Stripe returned success after the checkout.
 * The customer received the order confirmation email to the email address that was added to the checkout page.
