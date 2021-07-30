@@ -355,7 +355,7 @@ if 'USE_AWS' in os.environ:
 ## **Credits**
 Product page card design and footer design from [MDB](https://mdbootstrap.com/)  
 Scroll top feature is from [W3](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp)  
-Canva was used to create the logo [Canva](https://www.canva.com/)  
+Canva was used to create the logo and all the images in this website [Canva](https://www.canva.com/)  
 For Coupon code model and functionality I have used [protutorialplus](http://www.protutorialplus.com/django-shopping-cart), [JustDjango](https://www.youtube.com/watch?v=otoKdW-lYc8&t=539s)  tutorials   
 For Review model and functionality [Onthir](https://www.youtube.com/watch?v=lSX8nzu9ozg&list=PLeyK9Dw9ShReHUdt5Nh2qlgF6keN6DI7z&index=32) tutorials  
 Star rating [this website](https://webdesign.tutsplus.com/tutorials/a-simple-javascript-technique-for-filling-star-ratings--cms-29450)  
