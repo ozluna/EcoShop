@@ -370,7 +370,7 @@ input[name="q"]::placeholder {
   }
   .update-link,
   .remove-item {
-    font-size: smaller;
+    font-size: x-small;
   }
   .motto {
     font-size: 2rem;
@@ -403,7 +403,9 @@ input[name="q"]::placeholder {
   .cart-mob {
     margin-top: 2rem !important;
   }
-
+  .card-footer{
+    width:100%;
+  } 
   .increment-qty,
   .decrement-qty {
     padding: 0.25rem;
@@ -423,9 +425,6 @@ input[name="q"]::placeholder {
   }
   #delivery-banner h4 {
     font-size: 0.9rem;
-  }
-  .card-footer{
-    width:100%;
   }    
   .modal-backdrop.show {
     opacity: 0.5;
@@ -437,4 +436,9 @@ input[name="q"]::placeholder {
     width: 100%;
     height: 100%;
   }
-}
+  .btn-group-lg>.btn, .btn-lg {
+    padding: .5rem;
+    font-size: x-small;
+    line-height: 1;
+    }
+  }

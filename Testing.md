@@ -136,8 +136,8 @@ As a User I would like to be able to:
 
 ### Conclusion
 * Email Address Confirmation email contains site_name and site_domain and they returned the default value 'example.com'.
-* Delivery information is updated as expected after alternation in My Account page.
-* Order History Page renders as expected accessing from My Account page.
+* Delivery information is updated as expected after alternation in My Profile page.
+* Order History Page renders as expected accessing from My Profile page.
 
 ## Admin Product Management
 ---
@@ -152,15 +152,17 @@ As an admin I would like to be able to:
 
 ### Conclusion
 * Admin user redirected to product_detail page they created.
-* Admin can add edit or delete either from product page or product_detail page.
-
+* Admin can edit or delete either from product page or product_detail page.
+* Admin can add product from Product Management page
 
 # Bugs
 Through the developing stage I had come across many problems but some of them are persistent:  
 * On the cart page I created `Coupon` model and `add_coupon` function. On this function I added print codes to test if my code is working or not, when I got it working I wanted to remove this print line however when I remove them I have recieved this error :  
 ![(readme-doc/error.PNG)](readme-doc/error.PNG)
 
+
 I am very puzzled with this error hence I checked django documentation, ask on Slack, ask tutors, none could find any solution to it. So I kept the print lines as they are, hopefully in the future I will figure out the solution.
 
 * Other problem I have is when I wrote the modal I added the js code to my static folder but recently it stopped working and I had to add the script to my html to get it working.
 
+* I am aware that on the PRoduct Model there are imageurl and rating fields which are not used I wanted to get rid of it but I was worried it will break something same reason with friendly name field on category.
