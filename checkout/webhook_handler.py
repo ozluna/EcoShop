@@ -16,7 +16,6 @@ class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
-    
     def _send_confirmation_email(self, order):
         """Send the user a confirmation email"""
         cust_email = order.email
@@ -25,14 +24,13 @@ class StripeWH_Handler:
             {'order': order})
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
-            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})        
         send_mail(
             subject,
             body,
             settings.DEFAULT_FROM_EMAIL,
             [cust_email]
-        )        
+        )
 
     def handle_event(self, event):
         """
@@ -42,7 +40,6 @@ class StripeWH_Handler:
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200)
-    
     def handle_payment_intent_succeeded(self, event):
         """
         Handle the payment_intent.succeeded webhook from Stripe
@@ -60,11 +57,10 @@ class StripeWH_Handler:
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
             if value == "":
-                shipping_details.address[field] = None
-        
+                shipping_details.address[field] = None        
         # Updating the profile info if save_info was checked
         profile = None
-        username = intent.metadata.username # inorder to let anonymous user to shop
+        username = intent.metadata.username # anonymoususercanshop
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
