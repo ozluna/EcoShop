@@ -167,4 +167,4 @@ I am very puzzled with this error hence I checked django documentation, ask on S
 
 * I am aware that on the PRoduct Model there are imageurl and rating fields which are not used I wanted to get rid of it but I was worried it will break something same reason with friendly name field on category.
 
-* The discount does not display on the checkout sucess page Unfortunately I have realised a bit late and didn't have time to fix it. I have checked the stripe it does charge the user from the discounted price.
+* If Coupon applied the discount does not display on the checkout sucess page. Unfortunately, I have realised a bit late and didn't have time to fix it. I have checked the stripe it does charge the user from the discounted price.

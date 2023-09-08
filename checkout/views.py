@@ -9,6 +9,7 @@ from products.models import Product
 from cart.contexts import cart_contents
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
+from cart.models import Coupon 
 
 import stripe
 import json
@@ -132,7 +133,7 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-
+    
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         order.user_profile = profile
